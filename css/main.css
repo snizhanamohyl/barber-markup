@@ -143,21 +143,21 @@ button:active {
   padding-top: 280px;
   padding-bottom: 60px;
   background-color: var(--text-secondary);
-  background-image: url("../../images/hero-bg-img-mob.jpg");
+  background-image: url(../images/hero-bg-img-mob.jpg);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: right;
 }
 @media screen and (min-width: 834px) {
   .hero {
-    background-image: url("../../images/hero-bg-img-tablet.jpg");
+    background-image: url(../images/hero-bg-img-tablet.jpg);
     padding-top: 320px;
     padding-bottom: 117px;
   }
 }
 @media screen and (min-width: 1440px) {
   .hero {
-    background-image: url("../../images/hero-bg-img.jpg");
+    background-image: url(../images/hero-bg-img.jpg);
     padding-bottom: 200px;
   }
 }
