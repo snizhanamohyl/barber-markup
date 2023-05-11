@@ -1,0 +1,171 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.5;
+    color: var(--text-primary);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.list {
+    list-style: none;
+    padding-left: 0px;
+}
+
+.is-hidden {
+    display: none;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 80px;
+    padding-right: 80px;
+    min-width: 375px;
+    width: 100%;
+
+    @include tablet {
+        width: 834px;
+    }
+
+    @include desktop {
+        width: 1280px;
+    }
+}
+
+.title {
+    font-family: "Impact", sans-serif;
+    font-size: 48px;
+    line-height: 1.23;
+    text-transform: uppercase;
+}
+
+button {
+    padding: 16px 85px;
+    font-size: 24px;
+    font-family: "Impact", sans-serif;
+    letter-spacing: 0.06em;
+    line-height: 1.21;
+    color: var(--accent);
+    background-color: transparent;
+    border: 3px solid var(--accent);
+
+    @include tablet {
+        padding: 16px 39px;
+    }
+
+    @include desktop {
+        padding: 16px 64px;
+        font-size: 32px;
+        line-height: 1.22;
+    }
+}
+
+// .link {
+//     text-decoration: none;
+//     transition: color var(--transition-time) var(--transition-function);
+
+//     &:hover,
+//     &:focus {
+//         color: var(--accent-color);
+//     }
+// }
+
+// button {
+//     border: none;
+// }
+
+
+
+
+
+// section {
+//     padding-top: 60px;
+//     padding-bottom: 60px;
+
+//     &.other-paddings {
+//         padding-top: 118px;
+//         padding-bottom: 118px;
+//     }
+
+//     @include desktop {
+//         padding-top: 94px;
+//         padding-bottom: 94px;
+
+//         &.other-paddings {
+//             padding-top: 200px;
+//             padding-bottom: 200px;
+//         }
+//     }
+// }
+
+// .section-title {
+//     margin-bottom: 30px;
+//     @include font(28px, 1.18, inherit, 700);
+//     text-align: center;
+
+//     @include desktop {
+//         margin-bottom: 30px;
+//         font-size: 36px;
+//         line-height: 1.17;
+//     }
+// }
+
+// .button {
+//     @include font(16px, 1.88, 0.06em, 700);
+//     text-align: center;
+//     font-family: inherit;
+
+//     border-radius: 4px;
+//     border: none;
+//     box-shadow: 0px 4px 4px var(--btn-shadow-color);
+//     background-color: var(--accent-color);
+//     color: var(--white);
+//     cursor: pointer;
+//     transition: background-color var(--transition-time) var(--transition-function);
+
+//     &:hover,
+//     &:focus {
+//         background-color: var(--active-btn-color);
+//     }
+// }
+
+// .visually-hidden {
+//     position: absolute;
+//     white-space: nowrap;
+//     width: 1px;
+//     height: 1px;
+//     overflow: hidden;
+//     border: 0;
+//     padding: 0;
+//     clip: rect(0 0 0 0);
+//     clip-path: inset(50%);
+//     margin: -1px;
+// }
+
+// not really common
+// .call-to-action {
+//     margin-bottom: 20px;
+
+//     @include font(inherit, 1.14, inherit, 700);
+//     text-transform: uppercase;
+
+//     color: var(--white);
+// }

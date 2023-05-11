@@ -1,0 +1,23 @@
+.hero {
+    padding-top: 320px;
+    padding-bottom: 200px;
+    background-color: var(--text-secondary);
+    background-image: url(../../images/hero-bg-img.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+}
+
+.hero__info {
+    padding-left: 16px;
+}
+
+.hero__title {
+    margin-bottom: 32px;
+    width: 519px;
+}
+
+.hero__descr {
+    margin-bottom: 44px;
+    width: 415px;
+}
