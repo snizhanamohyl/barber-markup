@@ -2,9 +2,19 @@ body {
     margin: 0;
     font-family: 'Arial', sans-serif;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 12px;
     line-height: 1.5;
     color: var(--text-primary);
+
+        @include tablet {
+            font-size: 16px;
+        }
+    
+        @include desktop {
+            font-size: 20px;
+        }
+
+
 }
 
 h1,
@@ -36,25 +46,45 @@ img {
 .container {
     margin-left: auto;
     margin-right: auto;
-    padding-left: 80px;
-    padding-right: 80px;
-    min-width: 375px;
+    
+    padding-left: 15px;
+    padding-right: 15px;
+    min-width: 345px;
     width: 100%;
 
+    @include mobile {
+        width: 345px;
+    }
+
     @include tablet {
-        width: 834px;
+        padding-left: 40px;
+        padding-right: 40px;
+        width: 754px;
     }
 
     @include desktop {
+        padding-left: 80px;
+        padding-right: 80px;
         width: 1280px;
     }
 }
 
 .title {
     font-family: "Impact", sans-serif;
-    font-size: 48px;
-    line-height: 1.23;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.2;
     text-transform: uppercase;
+
+    @include tablet {
+        font-size: 36px;
+        line-height: 1.22;
+    }
+
+    @include desktop {
+        font-size: 48px;
+        line-height: 1.23;
+    }
 }
 
 button {
@@ -75,6 +105,20 @@ button {
         padding: 16px 64px;
         font-size: 32px;
         line-height: 1.22;
+    }
+    
+    transition: all var(--transition-time) var(--transition-function);
+
+    &:hover, &:focus {
+        cursor: pointer;
+        color: var(--text-secondary);
+        background-color: var(--accent);
+    }
+    
+    &:active {
+        color: var(--text-secondary);
+        background-color: var(--accent-hover);
+        border-color: var(--accent-hover);
     }
 }
 
