@@ -1,17 +1,17 @@
 @mixin mobile {
-    @media screen and (min-width: 375px) {
+    @media screen and (min-width: var(--mobile-breakpoint)) {
         @content;
     }
 }
 
 @mixin tablet {
-    @media screen and (min-width: 834px) {
+    @media screen and (min-width: var(--tablet-breakpoint)) {
         @content;
     }
 }
 
 @mixin desktop {
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: var(--desktop-breakpoint)) {
         @content;
     }
 }

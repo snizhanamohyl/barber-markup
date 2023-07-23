@@ -8,40 +8,44 @@
     background-position: right;
 
     @include tablet {
-        background-image: url(../images/hero-bg-img-tablet.jpg);
+        // background-image: url(../images/hero-bg-img-tablet.jpg);
         padding-top: 320px;
         padding-bottom: 117px;
     }
     
     @include desktop {
-        background-image: url(../images/hero-bg-img.jpg);
+        // background-image: url(../images/hero-bg-img.jpg);
         padding-bottom: 200px;
     }
 }
 
 .hero__title {
+    font-size: 20px;  
     margin-bottom: 16px;
-    line-height: 1.5;
+    // line-height: 1.5;
+
+    @include tablet {
+        font-size: 32px;
+    }
 
     @include desktop {
-        margin-bottom: 32px;
-        line-height: 1.23;
+        font-size: 44px;
+        // line-height: 1.23;
     }
 }
 
 .hero__descr {
-    margin-bottom: 135px;
-    width: 196px;
+    margin-bottom: 149px;
+    width: 172px;
 
-        @include tablet {
-            margin-bottom: 40px;
-            width: 320px;
-        }
-    
-        @include desktop {
-            width: 411px;
-        }
+    @include tablet {
+        margin-bottom: 32px;
+        width: 336px;
+    }
 
+    @include desktop {
+        width: 384px;
+    }
 }
 
 .hero__btn {

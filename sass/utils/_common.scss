@@ -2,19 +2,13 @@ body {
     margin: 0;
     font-family: 'Arial', sans-serif;
     font-weight: 400;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1.5;
     color: var(--text-primary);
 
-        @include tablet {
-            font-size: 16px;
-        }
-    
-        @include desktop {
-            font-size: 20px;
-        }
-
-
+    @include tablet {
+        font-size: 16px;
+    }
 }
 
 h1,
@@ -43,80 +37,75 @@ img {
     display: none;
 }
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 .container {
     margin-left: auto;
     margin-right: auto;
     
-    padding-left: 15px;
-    padding-right: 15px;
-    min-width: 345px;
+    padding-left: 24px;
+    padding-right: 24px;
+    min-width: var(--mobile-breakpoint);
     width: 100%;
 
     @include mobile {
-        width: 345px;
+        width: var(--mobile-breakpoint);
     }
 
     @include tablet {
-        padding-left: 40px;
-        padding-right: 40px;
-        width: 754px;
+        padding-left: 32px;
+        padding-right: 32px;
+        width: var(--tablet-breakpoint);
     }
 
     @include desktop {
         padding-left: 80px;
         padding-right: 80px;
-        width: 1280px;
+        width: var(--desktop-breakpoint);;
     }
 }
 
 .title {
     font-family: "Impact", sans-serif;
     font-weight: 400;
-    font-size: 20px;
-    line-height: 1.2;
+    font-size: 32px;
+    line-height: 1.22;
     text-transform: uppercase;
 
     @include tablet {
-        font-size: 36px;
-        line-height: 1.22;
-    }
-
-    @include desktop {
-        font-size: 48px;
+        font-size: 44px;
         line-height: 1.23;
     }
 }
 
 button {
-    padding: 16px 85px;
+    padding: 12px 0;
+    width: 100%;
     font-size: 24px;
     font-family: "Impact", sans-serif;
     letter-spacing: 0.06em;
     line-height: 1.21;
-    color: var(--accent);
-    background-color: transparent;
-    border: 3px solid var(--accent);
+    border: 1px solid var(--accent);
+    color: var(--text-secondary);
+    background-color: var(--accent);
 
     @include tablet {
-        padding: 16px 39px;
+        width: auto;
+        padding: 12px 32px;
     }
 
     @include desktop {
-        padding: 16px 64px;
-        font-size: 32px;
-        line-height: 1.22;
+        font-size: 28px;
     }
     
     transition: all var(--transition-time) var(--transition-function);
 
     &:hover, &:focus {
         cursor: pointer;
-        color: var(--text-secondary);
-        background-color: var(--accent);
-    }
-    
-    &:active {
-        color: var(--text-secondary);
         background-color: var(--accent-hover);
         border-color: var(--accent-hover);
     }
