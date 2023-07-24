@@ -1,0 +1,86 @@
+.header {
+    padding-top: 36px;
+    line-height: 0;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+
+    @include tablet {
+        padding-top: 19px;
+    }
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__logo {
+        display: inline-block;
+        height: fit-content;
+
+        &-icon {
+            @include tablet {
+                width: 96px;
+                height: 80px;
+            }
+        }
+    }
+
+    &__burger {
+        @include desktop {
+            display: none;
+        }
+    }
+
+    &__nav-wrap {
+        display: flex;
+        align-items: center;
+    }
+
+    &__nav {
+        display: none;
+
+        @include desktop {
+            display: flex;
+            align-items: center;
+            line-height: normal;
+            letter-spacing: 1.6px;
+            margin-left: 64px;
+            padding: 11px 0 11px 32px;
+            border-left: 2px solid var(--accent);
+
+            &-item:not(:last-child) {
+                margin-right: 35.2px;
+            }
+        }
+    } 
+}
+
+.socials {
+    display: none;
+
+    @include desktop {
+        display: flex;
+    }
+    
+    &__item:not(:last-child) {
+        margin-right: 21.33px;
+    }
+
+    &__link{
+        transition: color var(--transition-time) var(--transition-function);
+
+        &:hover,
+        &:focus {
+            color: var(--accent);
+        }
+    }
+
+
+    & svg {
+        fill: currentColor;
+    }
+}
+

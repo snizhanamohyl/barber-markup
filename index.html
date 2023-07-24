@@ -5,11 +5,64 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Barber</title>
-    <link rel="stylesheet" href="node_modules/modern-normalize/modern-normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css">
     <link rel="stylesheet" href='./css/main.min.css'>
 </head>
 <body>
-    <header class="header container">
+    <!-- Header -->
+    <header class="header">
+        <div class="header__container container">
+        <nav class="header__nav-wrap">
+            <a class="header__logo" href="./index.html">
+                <svg class="header__logo-icon" width="70" height="48">
+                    <use href="./images/sprite.svg#icon-logo"></use>
+                </svg>
+            </a>
+            <ul class="header__nav">
+                <li class="header__nav-item"><a class="link" href="#">Про нас</a></li>
+                <li class="header__nav-item"><a class="link" href="#">Послуги та ціни</a></li>
+                <li class="header__nav-item"><a class="link" href="#">Барбери</a></li>
+                <li class="header__nav-item"><a class="link" href="#">Галерея</a></li>
+                <li class="header__nav-item"><a class="link" href="#">Відгуки</a></li>
+                <li class="header__nav-item"><a class="link" href="#">Контакти</a></li>
+            </ul>
+        </nav>
+        <ul class="socials">
+            <li class="socials__item">
+                <a class="socials__link" href="#">
+                    <svg width="24" height="24">
+                        <use href="./images/sprite.svg#icon-instagram"></use>
+                    </svg>
+                </a>
+            </li>
+            <li class="socials__item">
+                <a class="socials__link" href="#">
+                    <svg width="24" height="24">
+                        <use href="./images/sprite.svg#icon-facebook"></use>
+                    </svg>
+                </a>
+            </li>
+            <li class="socials__item">
+                <a class="socials__link" href="#">
+                    <svg width="24" height="24">
+                        <use href="./images/sprite.svg#icon-telegram"></use>
+                    </svg>
+                </a>
+            </li>
+            <li class="socials__item">
+                <a class="socials__link" href="#">
+                    <svg width="24" height="24">
+                        <use href="./images/sprite.svg#icon-twitter"></use>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+        <button class="header__burger">
+            <svg width="40" height="40">
+                <use href="./images/sprite.svg#icon-burger"></use>
+            </svg>
+        </button>
+        </div>
     </header>
     <main>
         <!-- Hero -->
