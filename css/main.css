@@ -1,15 +1,14 @@
 :root {
-  --accent: #F24E1E;
+  --text-primary: #EEEEEE;
   --text-secondary: #232830;
-  --placeholder: rgba(238, 238, 238, 0.6);
-  --text-primary:#EEEEEE;
-  --success: #18993C;
-  --accent-hover: #CC3A0F;
-  --error-bg:rgba(204, 58, 15, 0.1);
-  --bg-secondary: #323843;
+  --accent: #F24E1E;
+  --accent-hover: #EC4210;
   --bg-primary: #D9D9D9;
-  --average-light: #B0B0B0;
-  --average-dark: #7B7B7B;
+  --bg-secondary: #323843;
+  --grey: #7B7B7B;
+  --grey-disabled: #B0B0B0;
+  --white: #FFFFFF;
+  --black: #000000;
   --transition-time: 250ms;
   --transition-function: cubic-bezier(0.4, 0, 0.2, 1);
   --mobile-breakpoint: 375px;
@@ -21,14 +20,10 @@ body {
   margin: 0;
   font-family: "Arial", sans-serif;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.5;
   color: var(--text-primary);
-}
-@media screen and (min-width: var(--tablet-breakpoint)) {
-  body {
-    font-size: 16px;
-  }
+  overflow-x: hidden;
 }
 
 h1,
@@ -69,21 +64,20 @@ img {
   padding-left: 24px;
   padding-right: 24px;
   min-width: var(--mobile-breakpoint);
-  width: 100%;
 }
-@media screen and (min-width: var(--mobile-breakpoint)) {
+@media screen and (min-width: 375px) {
   .container {
     width: var(--mobile-breakpoint);
   }
 }
-@media screen and (min-width: var(--tablet-breakpoint)) {
+@media screen and (min-width: 768px) {
   .container {
     padding-left: 32px;
     padding-right: 32px;
     width: var(--tablet-breakpoint);
   }
 }
-@media screen and (min-width: var(--desktop-breakpoint)) {
+@media screen and (min-width: 1280px) {
   .container {
     padding-left: 80px;
     padding-right: 80px;
@@ -95,92 +89,128 @@ img {
   font-family: "Impact", sans-serif;
   font-weight: 400;
   font-size: 32px;
-  line-height: 1.22;
+  line-height: normal;
   text-transform: uppercase;
 }
-@media screen and (min-width: var(--tablet-breakpoint)) {
+@media screen and (min-width: 768px) {
   .title {
     font-size: 44px;
-    line-height: 1.23;
   }
 }
 
 button {
-  padding: 12px 0;
-  width: 100%;
   font-size: 24px;
   font-family: "Impact", sans-serif;
-  letter-spacing: 0.06em;
-  line-height: 1.21;
-  border: 1px solid var(--accent);
+  line-height: normal;
+  border: none;
   color: var(--text-secondary);
   background-color: var(--accent);
-  transition: all var(--transition-time) var(--transition-function);
-}
-@media screen and (min-width: var(--tablet-breakpoint)) {
-  button {
-    width: auto;
-    padding: 12px 32px;
-  }
-}
-@media screen and (min-width: var(--desktop-breakpoint)) {
-  button {
-    font-size: 28px;
-  }
+  transition: background-color var(--transition-time) var(--transition-function);
 }
 button:hover, button:focus {
   cursor: pointer;
   background-color: var(--accent-hover);
-  border-color: var(--accent-hover);
+}
+
+a {
+  text-decoration: none;
+  transition: color var(--transition-time) var(--transition-function);
+}
+a:hover, a:focus {
+  cursor: pointer;
+  color: var(--accent-color);
+}
+
+section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  min-width: var(--mobile-breakpoint);
+}
+@media screen and (min-width: 1280px) {
+  section {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+}
+
+br {
+  display: block;
+  content: "";
+  margin-bottom: 4px;
+}
+@media screen and (min-width: 768px) {
+  br {
+    margin-bottom: 8px;
+  }
 }
 
 .hero {
   padding-top: 280px;
-  padding-bottom: 60px;
+  padding-bottom: 25px;
   background-color: var(--text-secondary);
-  background-image: url(../images/hero-bg-img-mob.jpg);
+  background-image: url(../../images/hero/hero-bg-mob.webp);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: right;
 }
-@media screen and (min-width: var(--tablet-breakpoint)) {
+@media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
   .hero {
-    padding-top: 320px;
-    padding-bottom: 117px;
+    background-image: url(../../images/hero/hero-bg-mob@2x.webp);
   }
 }
-@media screen and (min-width: var(--desktop-breakpoint)) {
+@media screen and (min-width: 768px) {
   .hero {
-    padding-bottom: 200px;
+    background-image: url(../../images/hero/hero-bg-tab.webp);
+    padding-top: 240px;
+    padding-bottom: 181px;
+  }
+}
+@media screen and (min-width: 768px) and (min-device-pixel-ratio: 2), screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 768px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (min-resolution: 2dppx) {
+  .hero {
+    background-image: url(../../images/hero/hero-bg-tab@2x.webp);
+  }
+}
+@media screen and (min-width: 1280px) {
+  .hero {
+    background-image: url(../../images/hero/hero-bg-desk.webp);
+    padding-bottom: 186px;
+  }
+}
+@media screen and (min-width: 1280px) and (min-device-pixel-ratio: 2), screen and (min-width: 1280px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 1280px) and (min-resolution: 192dpi), screen and (min-width: 1280px) and (min-resolution: 2dppx) {
+  .hero {
+    background-image: url(../../images/hero/hero-bg-desk@2x.webp);
   }
 }
 
 .hero__title {
   font-size: 20px;
   margin-bottom: 16px;
+  line-height: normal;
 }
-@media screen and (min-width: var(--tablet-breakpoint)) {
+@media screen and (min-width: 768px) {
   .hero__title {
     font-size: 32px;
   }
 }
-@media screen and (min-width: var(--desktop-breakpoint)) {
+@media screen and (min-width: 1280px) {
   .hero__title {
     font-size: 44px;
   }
 }
 
 .hero__descr {
+  font-size: 14px;
   margin-bottom: 149px;
   width: 172px;
 }
-@media screen and (min-width: var(--tablet-breakpoint)) {
+@media screen and (min-width: 768px) {
   .hero__descr {
+    font-size: 16px;
     margin-bottom: 32px;
     width: 336px;
   }
 }
-@media screen and (min-width: var(--desktop-breakpoint)) {
+@media screen and (min-width: 1280px) {
   .hero__descr {
     width: 384px;
   }
@@ -190,9 +220,16 @@ button:hover, button:focus {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  padding: 13px 105px;
 }
-@media screen and (min-width: var(--tablet-breakpoint)) {
+@media screen and (min-width: 768px) {
   .hero__btn {
     display: inline;
+    padding: 12px 32px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .hero__btn {
+    font-size: 28px;
   }
 }/*# sourceMappingURL=main.css.map */

@@ -2,13 +2,11 @@ body {
     margin: 0;
     font-family: 'Arial', sans-serif;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.5;
+    // font-variant: small-caps;
     color: var(--text-primary);
-
-    @include tablet {
-        font-size: 16px;
-    }
+    overflow-x: hidden;
 }
 
 h1,
@@ -50,7 +48,6 @@ img {
     padding-left: 24px;
     padding-right: 24px;
     min-width: var(--mobile-breakpoint);
-    width: 100%;
 
     @include mobile {
         width: var(--mobile-breakpoint);
@@ -73,112 +70,61 @@ img {
     font-family: "Impact", sans-serif;
     font-weight: 400;
     font-size: 32px;
-    line-height: 1.22;
+    line-height: normal;
     text-transform: uppercase;
 
     @include tablet {
         font-size: 44px;
-        line-height: 1.23;
     }
 }
 
 button {
-    padding: 12px 0;
-    width: 100%;
     font-size: 24px;
     font-family: "Impact", sans-serif;
-    letter-spacing: 0.06em;
-    line-height: 1.21;
-    border: 1px solid var(--accent);
+    line-height: normal;
+    border: none;
     color: var(--text-secondary);
     background-color: var(--accent);
-
-    @include tablet {
-        width: auto;
-        padding: 12px 32px;
-    }
-
-    @include desktop {
-        font-size: 28px;
-    }
     
-    transition: all var(--transition-time) var(--transition-function);
+    transition: background-color var(--transition-time) var(--transition-function);
 
     &:hover, &:focus {
         cursor: pointer;
         background-color: var(--accent-hover);
-        border-color: var(--accent-hover);
     }
 }
 
-// .link {
-//     text-decoration: none;
-//     transition: color var(--transition-time) var(--transition-function);
+a {
+    text-decoration: none;
+    transition: color var(--transition-time) var(--transition-function);
 
-//     &:hover,
-//     &:focus {
-//         color: var(--accent-color);
-//     }
-// }
+    &:hover,
+    &:focus {
+        cursor: pointer;
+        color: var(--accent-color);
+    }
+}
 
-// button {
-//     border: none;
-// }
+section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    min-width: var(--mobile-breakpoint);
 
+    @include desktop {
+        padding-top: 120px;
+        padding-bottom: 120px;
+    }
+}
 
+br {
+    display: block;
+    content: '';
+    margin-bottom: 4px;
 
-
-
-// section {
-//     padding-top: 60px;
-//     padding-bottom: 60px;
-
-//     &.other-paddings {
-//         padding-top: 118px;
-//         padding-bottom: 118px;
-//     }
-
-//     @include desktop {
-//         padding-top: 94px;
-//         padding-bottom: 94px;
-
-//         &.other-paddings {
-//             padding-top: 200px;
-//             padding-bottom: 200px;
-//         }
-//     }
-// }
-
-// .section-title {
-//     margin-bottom: 30px;
-//     @include font(28px, 1.18, inherit, 700);
-//     text-align: center;
-
-//     @include desktop {
-//         margin-bottom: 30px;
-//         font-size: 36px;
-//         line-height: 1.17;
-//     }
-// }
-
-// .button {
-//     @include font(16px, 1.88, 0.06em, 700);
-//     text-align: center;
-//     font-family: inherit;
-
-//     border-radius: 4px;
-//     border: none;
-//     box-shadow: 0px 4px 4px var(--btn-shadow-color);
-//     background-color: var(--accent-color);
-//     color: var(--white);
-//     cursor: pointer;
-//     transition: background-color var(--transition-time) var(--transition-function);
-
-//     &:hover,
-//     &:focus {
-//         background-color: var(--active-btn-color);
-//     }
-// }
+    @include tablet {
+        margin-bottom: 8px;
+    }
+}
 
 // .visually-hidden {
 //     position: absolute;
@@ -191,14 +137,4 @@ button {
 //     clip: rect(0 0 0 0);
 //     clip-path: inset(50%);
 //     margin: -1px;
-// }
-
-// not really common
-// .call-to-action {
-//     margin-bottom: 20px;
-
-//     @include font(inherit, 1.14, inherit, 700);
-//     text-transform: uppercase;
-
-//     color: var(--white);
 // }

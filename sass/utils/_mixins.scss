@@ -1,17 +1,25 @@
 @mixin mobile {
-    @media screen and (min-width: var(--mobile-breakpoint)) {
+    @media screen and (min-width: 375px) {
         @content;
     }
 }
 
 @mixin tablet {
-    @media screen and (min-width: var(--tablet-breakpoint)) {
+    @media screen and (min-width: 768px) {
         @content;
     }
 }
 
 @mixin desktop {
-    @media screen and (min-width: var(--desktop-breakpoint)) {
+    @media screen and (min-width: 1280px) {
+        @content;
+    }
+}
+
+@mixin retina {
+    @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
         @content;
     }
 }

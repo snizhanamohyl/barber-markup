@@ -1,28 +1,39 @@
 .hero {
     padding-top: 280px;
-    padding-bottom: 60px;
+    padding-bottom: 25px;
     background-color: var(--text-secondary);
-    background-image: url(../images/hero-bg-img-mob.jpg);
+    background-image: url(../../images/hero/hero-bg-mob.webp);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: right;
+    @include retina {
+        background-image: url(../../images/hero/hero-bg-mob@2x.webp);
+    }
 
     @include tablet {
-        // background-image: url(../images/hero-bg-img-tablet.jpg);
-        padding-top: 320px;
-        padding-bottom: 117px;
+        background-image: url(../../images/hero/hero-bg-tab.webp);
+        padding-top: 240px;
+        padding-bottom: 181px;
+
+        @include retina {
+            background-image: url(../../images/hero/hero-bg-tab@2x.webp);
+        }
     }
     
     @include desktop {
-        // background-image: url(../images/hero-bg-img.jpg);
-        padding-bottom: 200px;
+        background-image: url(../../images/hero/hero-bg-desk.webp);
+        padding-bottom: 186px;
+
+        @include retina {
+            background-image: url(../../images/hero/hero-bg-desk@2x.webp);
+        }
     }
 }
 
 .hero__title {
     font-size: 20px;  
     margin-bottom: 16px;
-    // line-height: 1.5;
+    line-height: normal;
 
     @include tablet {
         font-size: 32px;
@@ -30,15 +41,16 @@
 
     @include desktop {
         font-size: 44px;
-        // line-height: 1.23;
     }
 }
 
 .hero__descr {
+    font-size: 14px;
     margin-bottom: 149px;
     width: 172px;
 
     @include tablet {
+        font-size: 16px;
         margin-bottom: 32px;
         width: 336px;
     }
@@ -52,9 +64,14 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
+    padding: 13px 105px;
 
     @include tablet {
         display: inline;
+        padding: 12px 32px;
     }
 
+    @include desktop {
+        font-size: 28px;
+    }
 }
