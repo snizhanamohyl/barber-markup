@@ -2,30 +2,30 @@
     padding-top: 280px;
     padding-bottom: 25px;
     background-color: var(--text-secondary);
-    background-image: url(../../images/hero/hero-bg-mob.webp);
+    background-image: url(../images/hero/hero-bg-mob.webp);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: right;
     @include retina {
-        background-image: url(../../images/hero/hero-bg-mob@2x.webp);
+        background-image: url(../images/hero/hero-bg-mob@2x.webp);
     }
 
     @include tablet {
-        background-image: url(../../images/hero/hero-bg-tab.webp);
+        background-image: url(../images/hero/hero-bg-tab.webp);
         padding-top: 240px;
         padding-bottom: 181px;
 
         @include retina {
-            background-image: url(../../images/hero/hero-bg-tab@2x.webp);
+            background-image: url(../images/hero/hero-bg-tab@2x.webp);
         }
     }
     
     @include desktop {
-        background-image: url(../../images/hero/hero-bg-desk.webp);
+        background-image: url(../images/hero/hero-bg-desk.webp);
         padding-bottom: 186px;
 
         @include retina {
-            background-image: url(../../images/hero/hero-bg-desk@2x.webp);
+            background-image: url(../images/hero/hero-bg-desk@2x.webp);
         }
     }
 }

@@ -3,7 +3,7 @@
     color: var(--text-secondary);
 
     @include desktop {
-        background-image: url('../../images/svg/advantages-bg.svg');
+        background-image: url('../images/svg/advantages-bg.svg');
         background-repeat: no-repeat;
         background-position: top 12px right;
     }

@@ -222,37 +222,37 @@ br {
   padding-top: 280px;
   padding-bottom: 25px;
   background-color: var(--text-secondary);
-  background-image: url(../../images/hero/hero-bg-mob.webp);
+  background-image: url(../images/hero/hero-bg-mob.webp);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: right;
 }
 @media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
   .hero {
-    background-image: url(../../images/hero/hero-bg-mob@2x.webp);
+    background-image: url(../images/hero/hero-bg-mob@2x.webp);
   }
 }
 @media screen and (min-width: 768px) {
   .hero {
-    background-image: url(../../images/hero/hero-bg-tab.webp);
+    background-image: url(../images/hero/hero-bg-tab.webp);
     padding-top: 240px;
     padding-bottom: 181px;
   }
 }
 @media screen and (min-width: 768px) and (min-device-pixel-ratio: 2), screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 768px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (min-resolution: 2dppx) {
   .hero {
-    background-image: url(../../images/hero/hero-bg-tab@2x.webp);
+    background-image: url(../images/hero/hero-bg-tab@2x.webp);
   }
 }
 @media screen and (min-width: 1280px) {
   .hero {
-    background-image: url(../../images/hero/hero-bg-desk.webp);
+    background-image: url(../images/hero/hero-bg-desk.webp);
     padding-bottom: 186px;
   }
 }
 @media screen and (min-width: 1280px) and (min-device-pixel-ratio: 2), screen and (min-width: 1280px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 1280px) and (min-resolution: 192dpi), screen and (min-width: 1280px) and (min-resolution: 2dppx) {
   .hero {
-    background-image: url(../../images/hero/hero-bg-desk@2x.webp);
+    background-image: url(../images/hero/hero-bg-desk@2x.webp);
   }
 }
 
@@ -371,22 +371,22 @@ video {
 .about__video {
   position: relative;
   margin-bottom: 80px;
-  background-image: url(../../images/about/video-cover-mob.webp);
+  background-image: url(../images/about/video-cover-mob.webp);
   background-repeat: no-repeat;
 }
 @media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
   .about__video {
-    background-image: url(../../images/about/video-cover-mob@2x.webp);
+    background-image: url(../images/about/video-cover-mob@2x.webp);
   }
 }
 @media screen and (min-width: 376px) and (max-width: 1280px) {
   .about__video {
-    background-image: url(../../images/about/video-cover-tab.webp);
+    background-image: url(../images/about/video-cover-tab.webp);
   }
 }
 @media screen and (min-width: 376px) and (max-width: 1280px) and (min-device-pixel-ratio: 2), screen and (min-width: 376px) and (max-width: 1280px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 376px) and (max-width: 1280px) and (min-resolution: 192dpi), screen and (min-width: 376px) and (max-width: 1280px) and (min-resolution: 2dppx) {
   .about__video {
-    background-image: url(../../images/about/video-cover-tab@2x.webp);
+    background-image: url(../images/about/video-cover-tab@2x.webp);
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1279px) {
@@ -408,12 +408,12 @@ video {
 @media screen and (min-width: 1280px) {
   .about__video {
     margin-bottom: 0;
-    background-image: url(../../images/about/video-cover-desk.webp);
+    background-image: url(../images/about/video-cover-desk.webp);
   }
 }
 @media screen and (min-width: 1280px) and (min-device-pixel-ratio: 2), screen and (min-width: 1280px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 1280px) and (min-resolution: 192dpi), screen and (min-width: 1280px) and (min-resolution: 2dppx) {
   .about__video {
-    background-image: url(../../images/about/video-cover-desk@2x.webp);
+    background-image: url(../images/about/video-cover-desk@2x.webp);
   }
 }
 
@@ -582,7 +582,7 @@ video {
 }
 @media screen and (min-width: 1280px) {
   .advantages {
-    background-image: url("../../images/svg/advantages-bg.svg");
+    background-image: url("../images/svg/advantages-bg.svg");
     background-repeat: no-repeat;
     background-position: top 12px right;
   }

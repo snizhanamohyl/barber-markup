@@ -1,13 +1,6 @@
 .about {
-    // @media screen and (min-width: 769px) {
-    //     display: flex;
-    //     flex-direction: column;
-    //     align-items: center;
-    // }
-
     @include desktop {
         display: flex;
-        // flex-direction: row;
         align-items: flex-end;
         padding-right: 80px;
         width: 1280px;
@@ -63,18 +56,18 @@ video {
 .about__video {
     position: relative;
     margin-bottom: 80px;
-    background-image: url(../../images/about/video-cover-mob.webp);
+    background-image: url(../images/about/video-cover-mob.webp);
     background-repeat: no-repeat;
 
     @include retina {
-        background-image: url(../../images/about/video-cover-mob@2x.webp);
+        background-image: url(../images/about/video-cover-mob@2x.webp);
     }
 
     @media screen and (min-width: 376px) and (max-width: 1280px) {
-        background-image: url(../../images/about/video-cover-tab.webp);
+        background-image: url(../images/about/video-cover-tab.webp);
 
         @include retina {
-            background-image: url(../../images/about/video-cover-tab@2x.webp);
+            background-image: url(../images/about/video-cover-tab@2x.webp);
         }
     }
 
@@ -95,9 +88,9 @@ video {
 
     @include desktop {
         margin-bottom: 0;
-        background-image: url(../../images/about/video-cover-desk.webp);
+        background-image: url(../images/about/video-cover-desk.webp);
         @include retina {
-            background-image: url(../../images/about/video-cover-desk@2x.webp);
+            background-image: url(../images/about/video-cover-desk@2x.webp);
         }
     }
 }
