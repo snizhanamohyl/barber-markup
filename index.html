@@ -76,6 +76,68 @@
             <button class="hero__btn">Записатися</button>
             </div>
         </section>
+        <!-- About -->
+        <section class="about">
+            <div class="about__video">
+                <video class="video" poster="transperent">
+                    <source src="./videos/barbershop-promo.mp4" type="video/mp4" />
+                    <source src="./videos/barbershop-promo.webm" type="video/webm" />
+                </video>
+                <div class="video__controls">
+                    <div class="video__container">
+                        <button class="video__play" >
+                            <svg class="video__svg" width="64" height="64" viewBox="0 0 32 32">
+                                <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1"
+                                    d="M28.603 22.832c-1.519 2.802-3.929 5.018-6.849 6.296s-6.182 1.548-9.272 0.765c-3.090-0.783-5.83-2.574-7.789-5.089s-3.022-5.611-3.024-8.799 1.059-6.285 3.015-8.801c1.956-2.517 4.695-4.31 7.784-5.096s6.352-0.52 9.273 0.756c2.921 1.276 5.333 3.489 6.855 6.29">
+                                </path>
+                                <path stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1"
+                                    d="M21.8 16l-8.667-5.007v10.013l8.667-5.007z"></path>
+                                <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1"
+                                    d="M28.603 14.78c0.826 0 1.495-0.669 1.495-1.495s-0.669-1.495-1.495-1.495c-0.826 0-1.495 0.669-1.495 1.495s0.669 1.495 1.495 1.495z">
+                                </path>
+                            </svg>
+                            <!-- <svg class="video__svg" width="64" height="64">
+                                <use href="./images/sprite.svg#icon-player"></use>
+                            </svg> -->
+                        </button>
+                        <div class="video__info">
+                            <h3 class="video__title">Що ми робимо для тебе</h3>
+                            <button class="video__cta">Дивитися відео</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="about__container container">
+                <h2 class="about__title title">Про нас</h2>
+                    <div class="about__info">
+                        <ul class="about__list">
+                            <li class="about__item">
+                                <h3 class="about__item-title">Команда</h3>
+                                <p class="about__descr mob">Наша команда досвідчених перукарів є висококваліфікованими та захопленими своєю справою.
+                                </p>
+                                <p class="about__descr tab">Наша команда складається з досвідчених та талановитих стилістів, які створюють індивідуальні та модні зачіски,
+                                                                                            дотримуючись трендів та враховуючи побажання кожного клієнта.</p>
+                            </li>
+                            <li class="about__item">
+                                <h3 class="about__item-title">Образ і стиль</h3>
+                                <p class="about__descr">Від класичних стрижок до сучасних стилів, наші перукарі навчені впоратися з будь-яким
+                                    запитом.</p>
+                            </li>
+                        </ul>
+                        <picture>
+                            <source srcset="
+                                ./images/about/about-tab.webp 1x,
+                                ./images/about/about-tab@2x.webp.jpg 2x
+                                " media="(min-width: 768px)">
+                            <source srcset="
+                                ./images/about/about-mob.webp 1x,
+                                ./images/about/about-mob@2x.webp.jpg 2x
+                                " media="(max-width: 768px)">
+                            <img src="./images/about/about-mob.webp" alt="Barber doing the styling">
+                        </picture>
+                    </div>
+            </div>
+        </section>
     </main>
     <footer></footer>
 </body>
