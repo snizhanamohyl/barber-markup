@@ -574,4 +574,116 @@ video {
 
 .about__item:not(:last-child) {
   margin-bottom: 32px;
+}
+
+.advantages {
+  background-color: var(--bg-primary);
+  color: var(--text-secondary);
+}
+@media screen and (min-width: 1280px) {
+  .advantages {
+    background-image: url("../../images/svg/advantages-bg.svg");
+    background-repeat: no-repeat;
+    background-position: top 12px right;
+  }
+}
+.advantages .title {
+  margin-bottom: 16px;
+}
+@media screen and (min-width: 768px) {
+  .advantages__descr {
+    width: 520px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .advantages__descr {
+    width: 388px;
+  }
+}
+.advantages__info {
+  margin-bottom: 56px;
+}
+@media screen and (min-width: 1280px) {
+  .advantages__info {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+    margin-bottom: 64px;
+  }
+}
+
+.advantages__list {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin-left: auto;
+  margin-right: auto;
+  width: 256px;
+}
+@media screen and (min-width: 768px) {
+  .advantages__list {
+    width: auto;
+    flex-direction: row;
+    gap: 76px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .advantages__list {
+    gap: 80px;
+  }
+}
+
+.advantages__item {
+  padding-top: 8px;
+  border-top: 3px solid var(--accent);
+}
+@media screen and (min-width: 768px) {
+  .advantages__item {
+    flex-basis: 184px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .advantages__item {
+    flex-basis: 256px;
+  }
+}
+.advantages__item:not(:last-child) {
+  margin-bottom: 40px;
+}
+@media screen and (min-width: 768px) {
+  .advantages__item:not(:last-child) {
+    margin-bottom: 0;
+  }
+}
+.advantages__item-title {
+  font-family: Impact;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.advantages__item-title::before {
+  content: "";
+  display: block;
+  width: 0.3em;
+  height: 0.3em;
+  border-radius: 50%;
+  background-color: var(--text-secondary);
+  margin-right: 14px;
+  margin-left: 14px;
+}
+.advantages__item-descr {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.advantages__item-number {
+  color: var(--accent);
+  font-family: Impact;
+  font-size: 44px;
+  line-height: normal;
+  text-transform: uppercase;
 }/*# sourceMappingURL=main.css.map */
