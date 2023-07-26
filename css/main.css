@@ -376,6 +376,9 @@ video {
   margin-bottom: 80px;
   background-image: url(../images/about/video-cover-mob.webp);
   background-repeat: no-repeat;
+  background-size: cover;
+  min-width: 375px;
+  height: 560px;
 }
 @media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
   .about__video {
@@ -384,6 +387,8 @@ video {
 }
 @media screen and (min-width: 376px) and (max-width: 1280px) {
   .about__video {
+    max-width: 736px;
+    height: 536px;
     background-image: url(../images/about/video-cover-tab.webp);
   }
 }
@@ -393,11 +398,6 @@ video {
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1279px) {
-  .about__video {
-    width: 768px;
-    margin-left: auto;
-    margin-right: auto;
-  }
   .about__video::before {
     content: "";
     display: block;
@@ -405,11 +405,13 @@ video {
     width: 64px;
     position: absolute;
     top: 64px;
-    right: 8px;
+    right: -24px;
   }
 }
 @media screen and (min-width: 1280px) {
   .about__video {
+    width: 720px;
+    height: 576px;
     margin-bottom: 0;
     background-image: url(../images/about/video-cover-desk.webp);
   }
@@ -421,19 +423,14 @@ video {
 }
 
 .video {
-  min-width: 375px;
-  height: 560px;
+  width: 100%;
+  height: 100%;
 }
-@media screen and (min-width: 376px) and (max-width: 1280px) {
-  .video {
-    max-width: 736px;
-    height: 536px;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .video {
-    width: 720px;
-    height: 576px;
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .video__wrap {
+    width: 768px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 .video__controls {

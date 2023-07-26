@@ -44,12 +44,17 @@ video {
     margin-bottom: 80px;
     background-image: url(../images/about/video-cover-mob.webp);
     background-repeat: no-repeat;
+    background-size: cover;
+    min-width: 375px;
+    height: 560px;
 
     @include retina {
         background-image: url(../images/about/video-cover-mob@2x.webp);
     }
 
     @media screen and (min-width: 376px) and (max-width: 1280px) {
+        max-width: 736px;
+        height: 536px;
         background-image: url(../images/about/video-cover-tab.webp);
 
         @include retina {
@@ -58,9 +63,6 @@ video {
     }
 
     @media screen and (min-width: 768px) and (max-width: 1279px) {
-        width: 768px;
-        margin-left: auto;
-        margin-right: auto;
         &::before {
             content: '';
             display: block;
@@ -68,11 +70,13 @@ video {
             width: 64px;
             position: absolute;
             top: 64px;
-            right: 8px;
+            right: -24px;
         }
     }
 
     @include desktop {
+        width: 720px;
+        height: 576px;
         margin-bottom: 0;
         background-image: url(../images/about/video-cover-desk.webp);
         @include retina {
@@ -82,17 +86,16 @@ video {
 }
 
 .video {
-    min-width: 375px;
-    height: 560px;
+    width: 100%;
+    height: 100%;
+    // max-width: 736px;
 
-    @media screen and (min-width: 376px) and (max-width: 1280px) {
-        max-width: 736px;
-        height: 536px;
-    }
-
-    @include desktop {
-        width: 720px;
-        height: 576px;
+    &__wrap {
+        @media screen and (min-width: 768px) and (max-width: 1279px) {
+            width: 768px;
+            margin-left: auto;
+            margin-right: auto;
+        }
     }
 
     &__controls {
@@ -104,6 +107,7 @@ video {
         left: 0;
 
         @media screen and (min-width: 375px) and (max-width: 1280px) {
+            
             justify-content: flex-end;
             bottom: 64px;
         }
