@@ -42,6 +42,10 @@
     @include desktop {
         font-size: 44px;
     }
+
+    &::before {
+        display: none; 
+    }
 }
 
 .hero__descr {

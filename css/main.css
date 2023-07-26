@@ -287,6 +287,9 @@ br {
     font-size: 44px;
   }
 }
+.hero__title::before {
+  display: none;
+}
 
 .hero__descr {
   font-size: 14px;
