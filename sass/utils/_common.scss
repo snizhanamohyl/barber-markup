@@ -70,6 +70,22 @@ ul {
     @include tablet {
         font-size: 44px;
     }
+
+    &::before {
+        content: '';
+        display: inline-block;
+        margin-right: 16px;
+        border-top: 3px solid var(--accent);
+        width: 40px;
+        position: relative;
+        top: -0.4em;
+        left: 0;
+
+        @include tablet {
+            width: 64px;
+            margin-right: 32px;
+        }
+    }
 }
 
 button {

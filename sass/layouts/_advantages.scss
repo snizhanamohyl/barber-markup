@@ -10,6 +10,10 @@
 
     & .title {
         margin-bottom: 16px;
+
+        &::before {
+            display: none;
+        }
     }
 
     &__descr {

@@ -91,6 +91,22 @@ ul {
     font-size: 44px;
   }
 }
+.title::before {
+  content: "";
+  display: inline-block;
+  margin-right: 16px;
+  border-top: 3px solid var(--accent);
+  width: 40px;
+  position: relative;
+  top: -0.4em;
+  left: 0;
+}
+@media screen and (min-width: 768px) {
+  .title::before {
+    width: 64px;
+    margin-right: 32px;
+  }
+}
 
 button {
   display: flex;
@@ -341,22 +357,6 @@ br {
     left: -80px;
   }
 }
-.about__title::before {
-  content: "";
-  display: inline-block;
-  margin-right: 16px;
-  border-top: 3px solid var(--accent);
-  width: 40px;
-  position: relative;
-  top: -0.4em;
-  left: 0;
-}
-@media screen and (min-width: 768px) {
-  .about__title::before {
-    width: 64px;
-    margin-right: 32px;
-  }
-}
 @media screen and (min-width: 1280px) {
   .about__title::before {
     width: 96px;
@@ -590,6 +590,9 @@ video {
 .advantages .title {
   margin-bottom: 16px;
 }
+.advantages .title::before {
+  display: none;
+}
 @media screen and (min-width: 768px) {
   .advantages__descr {
     width: 520px;
@@ -686,4 +689,149 @@ video {
   font-size: 44px;
   line-height: normal;
   text-transform: uppercase;
+}
+
+.services {
+  background-color: var(--text-secondary);
+}
+.services .title {
+  margin-bottom: 18px;
+}
+@media screen and (min-width: 768px) {
+  .services .title {
+    margin-bottom: 8px;
+  }
+}
+.services__descr {
+  font-size: 14px;
+  padding-left: 56px;
+  margin-bottom: 56px;
+}
+@media screen and (min-width: 768px) {
+  .services__descr {
+    font-size: 16px;
+    padding-left: 96px;
+    width: 352px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .services__descr {
+    margin-bottom: 80px;
+  }
+}
+.services__icon-wrap {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background-color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 56px;
+}
+
+.price__wrap {
+  background-color: var(--bg-secondary);
+  padding: 48px 24px;
+}
+@media screen and (min-width: 768px) {
+  .price__wrap {
+    padding-right: 32px;
+    padding-left: 32px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .price__wrap {
+    padding-right: 22px;
+    padding-left: 22px;
+  }
+}
+.price__title {
+  font-family: Impact;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+.price__cost {
+  font-size: 20px;
+  color: var(--accent);
+}
+.price__cost .dash {
+  font-size: 24px;
+  margin-right: 8px;
+}
+.price__item:not(:last-child) {
+  margin-bottom: 48px;
+}
+
+.services__item:not(:last-child) {
+  margin-bottom: 40px;
+}
+@media screen and (min-width: 768px) {
+  .services__item {
+    flex-basis: calc((100% - 32px) / 2);
+  }
+}
+@media screen and (min-width: 1280px) {
+  .services__item {
+    flex-basis: calc((100% - 64px) / 3);
+  }
+}
+.services__list {
+  position: relative;
+}
+.services__list::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 68px;
+  height: 68px;
+  background-image: url(../images/svg/dots.svg);
+}
+@media screen and (min-width: 768px) {
+  .services__list::before {
+    top: -22px;
+    right: -22px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .services__list::before {
+    top: -34px;
+    right: -34px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .services__list {
+    display: flex;
+    -moz-column-gap: 32px;
+         column-gap: 32px;
+    row-gap: 40px;
+    flex-wrap: wrap;
+  }
+  .services__list::after {
+    content: "";
+    display: block;
+    width: 336px;
+    height: 495px;
+    background-image: url(../images/services/services-tab.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+@media screen and (min-width: 768px) and (min-device-pixel-ratio: 2), screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 768px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (min-resolution: 2dppx) {
+  .services__list::after {
+    background-image: url(../images/services/services-tab@2x.webp);
+  }
+}
+@media screen and (min-width: 1280px) {
+  .services__list::after {
+    display: none;
+  }
 }/*# sourceMappingURL=main.css.map */
