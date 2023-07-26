@@ -349,6 +349,16 @@ br {
     display: none;
   }
 }
+.about img {
+  width: 327px;
+  height: 320px;
+}
+@media screen and (min-width: 768px) {
+  .about img {
+    width: auto;
+    height: auto;
+  }
+}
 
 .about__title {
   color: var(--text-secondary);

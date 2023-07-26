@@ -14,6 +14,16 @@
             display: none;
         }
     }
+
+    & img {
+        width: 327px;
+        height: 320px;
+
+        @include tablet {
+            width: auto;
+            height: auto;
+        }
+    }
 }
 
 
