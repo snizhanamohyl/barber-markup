@@ -32,8 +32,8 @@
 <symbol id="icon-arrow-bottom" viewBox="0 0 32 32">
 <path fill="none" stroke="#d9d9d9" style="stroke: var(--color5, #d9d9d9)" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.4" d="M27.2 11.2l-9.951 8.529c-0.719 0.616-1.78 0.616-2.499 0l-9.95-8.529"></path>
 </symbol>
-<symbol id="icon-arrow-left" viewBox="0 0 32 32">
-<path fill="#f24e1e" style="fill: var(--color6, #f24e1e)" d="M25.697 26.853l-12.121-11.082 12.121-11.082-2.424-4.433-16.97 15.515 16.97 15.515 2.424-4.433z"></path>
+<symbol id="icon-arrow-left" viewBox="0 0 20 32">
+<path d="M20 27.4286L7.5 16L20 4.57143L17.5 0L0 16L17.5 32L20 27.4286Z"/>
 </symbol>
 <symbol id="icon-arrow-long-left" viewBox="0 0 98 16">
 <path d="M0.792892 7.29289C0.402367 7.68342 0.402367 8.31658 0.792892 8.70711L7.15685 15.0711C7.54738 15.4616 8.18054 15.4616 8.57107 15.0711C8.96159 14.6805 8.96159 14.0474 8.57107 13.6569L2.91422 8L8.57107 2.34315C8.96159 1.95262 8.96159 1.31946 8.57107 0.928932C8.18054 0.538408 7.54738 0.538408 7.15685 0.928932L0.792892 7.29289ZM97.5 7L1.5 7V9L97.5 9V7Z"/>
@@ -41,8 +41,8 @@
 <symbol id="icon-arrow-long-right" viewBox="0 0 98 16">
 <path d="M97.2071 8.70711C97.5976 8.31658 97.5976 7.68342 97.2071 7.29289L90.8432 0.928932C90.4526 0.538408 89.8195 0.538408 89.4289 0.928932C89.0384 1.31946 89.0384 1.95262 89.4289 2.34315L95.0858 8L89.4289 13.6569C89.0384 14.0474 89.0384 14.6805 89.4289 15.0711C89.8195 15.4616 90.4526 15.4616 90.8432 15.0711L97.2071 8.70711ZM0.5 9L96.5 9V7L0.5 7L0.5 9Z"/>
 </symbol>
-<symbol id="icon-arrow-right" viewBox="0 0 32 32">
-<path fill="#f24e1e" style="fill: var(--color6, #f24e1e)" d="M6.303 4.689l12.121 11.082-12.121 11.082 2.424 4.433 16.97-15.515-16.97-15.515-2.424 4.433z"></path>
+<symbol id="icon-arrow-right" viewBox="0 0 20 32">
+<path d="M0 4.57143L12.5 16L0 27.4286L2.5 32L20 16L2.5 0L0 4.57143Z"/>
 </symbol>
 <symbol id="icon-arrow-top" viewBox="0 0 32 32">
 <path fill="none" stroke="#f24e1e" style="stroke: var(--color6, #f24e1e)" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.4" d="M4.8 20.8l9.95-8.529c0.719-0.616 1.78-0.616 2.499 0l9.951 8.529"></path>
