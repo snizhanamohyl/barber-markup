@@ -1,0 +1,130 @@
+.barbers {
+    position: relative;
+
+    & .title  {
+        color: var(--text-secondary);
+        margin-bottom: 8px;
+    }
+
+    &__descr {
+        color: var(--text-secondary);
+        padding-left: 56px;
+        margin-bottom: 56px;
+
+        @include tablet {
+            padding-left: 96px;
+        }
+
+        @include desktop {
+            margin-bottom: 80px;
+        }
+    }
+}
+
+.barbers__nav {
+    display: flex;
+    margin-bottom: 32px;
+    justify-content: center;
+    transition: color var(--transition-color) var(--transition-function);
+
+    @include tablet {
+        position: absolute;
+        top: 150px;
+        right: 32px;
+    }
+
+    @include desktop {
+        top: 190px;
+        right: 80px;
+    }
+
+    &-btn {
+        color: var(--accent);
+
+        & svg {
+            fill: currentColor;
+        }
+
+        &:hover {
+            color: var(--accent-hover);
+        }
+    }
+
+    &-btn[disabled] {
+        color: var(--grey-disabled);
+    } 
+}
+
+.btn-left {
+    margin-right: 32px;
+}
+
+.slider__wrap {
+    overflow: hidden ;
+}
+
+.barbers__list {  
+    display: flex;
+    width: calc(327px * 5);
+
+    @include tablet {
+        gap: 32px;
+        width: calc(336px * 5 + 32px * 4);
+    }
+
+    @include desktop {
+        gap: 32px;
+        width: calc(352px * 5 + 32px * 4);
+    }
+}
+
+.barbers__item {
+    background-color: var(--bg-secondary);
+    flex-basis: (100% / 5);
+
+    @include tablet {
+        flex-basis: calc((100% - 32px * 4) / 5);
+    }
+
+    @include desktop {
+        flex-basis: calc((100% - 32px * 4) / 5);
+    }
+
+    & img {
+        width: 327px;
+        height: 326px;
+        object-fit: cover;
+
+        @include tablet {
+            width: 336px;
+            height: 327px;
+        }
+    
+        @include desktop {
+            width: 352px;
+        }
+    }
+
+    &-info {
+        padding-top: 40px;
+        padding-bottom: 32px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &-title {
+        font-family: Impact;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: normal;
+        margin-bottom: 4px;
+    }
+
+    &-descr {
+        color: var(--accent);
+        margin-bottom: 24px;
+    }
+}
+
+

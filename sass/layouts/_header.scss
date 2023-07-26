@@ -56,31 +56,13 @@
             }
         }
     } 
-}
 
-.socials {
-    display: none;
+    & .socials {
+        display: none;
 
-    @include desktop {
-        display: flex;
-    }
-    
-    &__item:not(:last-child) {
-        margin-right: 21.33px;
-    }
-
-    &__link{
-        transition: color var(--transition-time) var(--transition-function);
-
-        &:hover,
-        &:focus {
-            color: var(--accent);
+        @include desktop {
+            display: flex;
         }
-    }
-
-
-    & svg {
-        fill: currentColor;
     }
 }
 
