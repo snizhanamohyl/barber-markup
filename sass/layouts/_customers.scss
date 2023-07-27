@@ -1,0 +1,86 @@
+.customers {
+    position: relative;
+
+    & .title {
+        color: var(--text-secondary);
+        margin-bottom: 56px;
+    }
+}
+
+.customers__list {
+    display: flex;
+    width: calc(327px * 4);
+
+    @include tablet {
+        gap: 32px;
+        width: calc(521px * 4 + 3 * 32px);
+    }
+
+    @include desktop {
+        width: calc(544px * 4 + 3 * 32px);
+    }
+}
+
+.customers__item {
+    flex-basis: calc(100% / 4);
+    font-size: 14px;
+    background-color: var(--text-secondary);
+    padding: 24px;
+
+    @include tablet {
+        font-size: 16px;
+        padding: 32px;
+        flex-basis: calc((100% - 32px * 3) / 4)
+    }
+
+    @include tablet {
+        flex-basis: calc((100% - 32px * 3) / 4)
+    }
+}
+
+.customer__wrap {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 16px;
+
+    @include tablet {
+        margin-bottom: 0;
+    }
+}
+
+.customer__img {
+    border-radius: 50%;
+    object-fit: cover;
+
+    @include tablet {
+        width: 72px;
+        height: 72px;
+    }
+}
+
+.customer__name {
+    font-family: Impact;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+
+    @include tablet {
+        font-size: 24px;
+    }
+}
+
+.customer__rate {
+    color: var(--accent);
+
+    & svg {
+        fill: currentColor;
+    }
+}
+
+.customer__feedback {
+    @include tablet {
+        padding-left: 96px;
+    }
+}

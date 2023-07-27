@@ -984,6 +984,7 @@ video {
   max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
+  padding-bottom: 0;
 }
 
 .gallery__list {
@@ -1018,25 +1019,118 @@ video {
 }
 
 .gallery__btn {
-  width: 48px;
-  height: 48px;
+  width: 80px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+  background: radial-gradient(circle at center, rgba(50, 56, 67, 0.35), rgba(50, 56, 67, 0) 70%);
   color: var(--accent);
   transition: color var(--transition-time) var(--transition-function);
   position: absolute;
   top: 50%;
-  right: 16px;
-  transform: translateY(-50%);
+  right: 0px;
 }
 .gallery__btn:hover, .gallery__btn:focus {
   color: var(--accent-hover);
 }
 .gallery__btn.left {
-  left: 16px;
+  left: 0px;
 }
 .gallery__btn svg {
   fill: currentColor;
+}
+
+.customers {
+  position: relative;
+}
+.customers .title {
+  color: var(--text-secondary);
+  margin-bottom: 56px;
+}
+
+.customers__list {
+  display: flex;
+  width: 1308px;
+}
+@media screen and (min-width: 768px) {
+  .customers__list {
+    gap: 32px;
+    width: 2180px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .customers__list {
+    width: 2272px;
+  }
+}
+
+.customers__item {
+  flex-basis: 25%;
+  font-size: 14px;
+  background-color: var(--text-secondary);
+  padding: 24px;
+}
+@media screen and (min-width: 768px) {
+  .customers__item {
+    font-size: 16px;
+    padding: 32px;
+    flex-basis: calc((100% - 96px) / 4);
+  }
+}
+@media screen and (min-width: 768px) {
+  .customers__item {
+    flex-basis: calc((100% - 96px) / 4);
+  }
+}
+
+.customer__wrap {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 16px;
+}
+@media screen and (min-width: 768px) {
+  .customer__wrap {
+    margin-bottom: 0;
+  }
+}
+
+.customer__img {
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media screen and (min-width: 768px) {
+  .customer__img {
+    width: 72px;
+    height: 72px;
+  }
+}
+
+.customer__name {
+  font-family: Impact;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+@media screen and (min-width: 768px) {
+  .customer__name {
+    font-size: 24px;
+  }
+}
+
+.customer__rate {
+  color: var(--accent);
+}
+.customer__rate svg {
+  fill: currentColor;
+}
+
+@media screen and (min-width: 768px) {
+  .customer__feedback {
+    padding-left: 96px;
+  }
 }/*# sourceMappingURL=main.css.map */
