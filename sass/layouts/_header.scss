@@ -56,13 +56,13 @@
             }
         }
     } 
+}
 
-    & .socials {
-        display: none;
+.header__socials {
+    display: none;
 
-        @include desktop {
-            display: flex;
-        }
+    @include desktop {
+        display: flex;
     }
 }
 

@@ -12,56 +12,105 @@
     <!-- Header -->
     <header class="header">
         <div class="header__container container">
-        <nav class="header__nav-wrap">
-            <a class="header__logo" href="./index.html">
-                <svg class="header__logo-icon" width="70" height="48">
-                    <use href="./images/sprite.svg#icon-logo"></use>
-                </svg>
-            </a>
-            <ul class="header__nav">
-                <li class="header__nav-item"><a class="link" href="#">Про нас</a></li>
-                <li class="header__nav-item"><a class="link" href="#">Послуги та ціни</a></li>
-                <li class="header__nav-item"><a class="link" href="#">Барбери</a></li>
-                <li class="header__nav-item"><a class="link" href="#">Галерея</a></li>
-                <li class="header__nav-item"><a class="link" href="#">Відгуки</a></li>
-                <li class="header__nav-item"><a class="link" href="#">Контакти</a></li>
+            <nav class="header__nav-wrap">
+                <a class="header__logo" href="./index.html">
+                    <svg class="header__logo-icon" width="70" height="48">
+                        <use href="./images/sprite.svg#icon-logo"></use>
+                    </svg>
+                </a>
+                <ul class="header__nav">
+                    <li class="header__nav-item"><a class="link" href="#">Про нас</a></li>
+                    <li class="header__nav-item"><a class="link" href="#">Послуги та ціни</a></li>
+                    <li class="header__nav-item"><a class="link" href="#">Барбери</a></li>
+                    <li class="header__nav-item"><a class="link" href="#">Галерея</a></li>
+                    <li class="header__nav-item"><a class="link" href="#">Відгуки</a></li>
+                    <li class="header__nav-item"><a class="link" href="#">Контакти</a></li>
+                </ul>
+            </nav>
+            <ul class="header__socials socials">
+                <li class="socials__item">
+                    <a class="socials__link" href="#">
+                        <svg width="24" height="24">
+                            <use href="./images/sprite.svg#icon-instagram"></use>
+                        </svg>
+                    </a>
+                </li>
+                <li class="socials__item">
+                    <a class="socials__link" href="#">
+                        <svg width="24" height="24">
+                            <use href="./images/sprite.svg#icon-facebook"></use>
+                        </svg>
+                    </a>
+                </li>
+                <li class="socials__item">
+                    <a class="socials__link" href="#">
+                        <svg width="24" height="24">
+                            <use href="./images/sprite.svg#icon-telegram"></use>
+                        </svg>
+                    </a>
+                </li>
+                <li class="socials__item">
+                    <a class="socials__link" href="#">
+                        <svg width="24" height="24">
+                            <use href="./images/sprite.svg#icon-twitter"></use>
+                        </svg>
+                    </a>
+                </li>
             </ul>
-        </nav>
-        <ul class="socials">
-            <li class="socials__item">
-                <a class="socials__link" href="#">
-                    <svg width="24" height="24">
-                        <use href="./images/sprite.svg#icon-instagram"></use>
-                    </svg>
-                </a>
-            </li>
-            <li class="socials__item">
-                <a class="socials__link" href="#">
-                    <svg width="24" height="24">
-                        <use href="./images/sprite.svg#icon-facebook"></use>
-                    </svg>
-                </a>
-            </li>
-            <li class="socials__item">
-                <a class="socials__link" href="#">
-                    <svg width="24" height="24">
-                        <use href="./images/sprite.svg#icon-telegram"></use>
-                    </svg>
-                </a>
-            </li>
-            <li class="socials__item">
-                <a class="socials__link" href="#">
-                    <svg width="24" height="24">
-                        <use href="./images/sprite.svg#icon-twitter"></use>
-                    </svg>
-                </a>
-            </li>
-        </ul>
-        <button class="header__burger">
-            <svg width="40" height="40">
-                <use href="./images/sprite.svg#icon-burger"></use>
-            </svg>
-        </button>
+            <button type="button" class="header__burger" data-open>
+                <svg width="40" height="40">
+                    <use href="./images/sprite.svg#icon-burger"></use>
+                </svg>
+            </button>
+        </div>
+        <div class="mob-menu">
+            <button class="close-btn" type="button" data-close>
+                <svg width="32" height="32">
+                    <use href="./images/sprite.svg#icon-close"></use>
+                </svg>
+            </button>
+            <div class="menu-wrap">
+                <nav>
+                    <ul class="mob__nav">
+                        <li class="mob__nav-item"><a class="link" href="#">Про нас</a></li>
+                        <li class="mob__nav-item"><a class="link" href="#">Послуги та ціни</a></li>
+                        <li class="mob__nav-item"><a class="link" href="#">Барбери</a></li>
+                        <li class="mob__nav-item"><a class="link" href="#">Галерея</a></li>
+                        <li class="mob__nav-item"><a class="link" href="#">Відгуки</a></li>
+                        <li class="mob__nav-item"><a class="link" href="#">Контакти</a></li>
+                    </ul>
+                </nav>
+                <ul class="socials">
+                    <li class="socials__item">
+                        <a class="socials__link" href="#">
+                            <svg width="24" height="24">
+                                <use href="./images/sprite.svg#icon-instagram"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="socials__item">
+                        <a class="socials__link" href="#">
+                            <svg width="24" height="24">
+                                <use href="./images/sprite.svg#icon-facebook"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="socials__item">
+                        <a class="socials__link" href="#">
+                            <svg width="24" height="24">
+                                <use href="./images/sprite.svg#icon-telegram"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="socials__item">
+                        <a class="socials__link" href="#">
+                            <svg width="24" height="24">
+                                <use href="./images/sprite.svg#icon-twitter"></use>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </header>
     <main>
@@ -73,7 +122,7 @@
             <p class="hero__descr">Чоловіча перукарня для тих, хто цінує відмінний сервіс, серйозне ставлення та піклується про свій
                 зовнішній вигляд.
             </p>
-            <button class="hero__btn">Записатися</button>
+            <button class="hero__btn" type="button">Записатися</button>
             </div>
         </section>
         <!-- About -->
@@ -86,7 +135,7 @@
                     </video>
                     <div class="video__controls">
                         <div class="video__container">
-                            <button class="video__play">
+                            <button class="video__play" type="button">
                                 <svg class="video__svg" width="64" height="64" viewBox="0 0 32 32">
                                     <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4"
                                         stroke-width="1"
@@ -105,7 +154,7 @@
                             </button>
                             <div class="video__info">
                                 <h3 class="video__title">Що ми робимо для тебе</h3>
-                                <button class="video__cta">Дивитися відео</button>
+                                <button class="video__cta" type="button">Дивитися відео</button>
                             </div>
                         </div>
                     </div>
@@ -262,12 +311,12 @@
             <h2 class="title">Наші барбери</h2>
             <p class="barbers__descr">Для справжніх поціновувачів атмосфери</p>
             <div class="arrows-nav">
-                <button class="btn-left arrows-nav-btn" disabled>
+                <button class="btn-left arrows-nav-btn" type="button" disabled>
                     <svg width="96" height="16">
                         <use href="./images/sprite.svg#icon-arrow-long-left"></use>
                     </svg>
                 </button>
-                <button class="btn-right arrows-nav-btn">
+                <button class="btn-right arrows-nav-btn" type="button">
                     <svg width="96" height="16" >
                         <use href="./images/sprite.svg#icon-arrow-long-right"></use>
                     </svg>
@@ -535,12 +584,12 @@
         </section>
         <section class="gallery">
             <div class="slider__wrap">
-                <button class="gallery__btn left">
+                <button class="gallery__btn left" type="button">
                     <svg width="20" height="32">
                         <use href="./images/sprite.svg#icon-arrow-left"></use>
                     </svg>
                 </button>
-                <button class="gallery__btn">
+                <button class="gallery__btn" type="button">
                     <svg width="20" height="32">
                         <use href="./images/sprite.svg#icon-arrow-right"></use>
                     </svg>
@@ -624,12 +673,12 @@
                 </h2>
             </div>
             <div class="arrows-nav">
-                <button class="btn-left arrows-nav-btn" disabled>
+                <button class="btn-left arrows-nav-btn" type="button" disabled>
                     <svg width="96" height="16">
                         <use href="./images/sprite.svg#icon-arrow-long-left"></use>
                     </svg>
                 </button>
-                <button class="btn-right arrows-nav-btn">
+                <button class="btn-right arrows-nav-btn" type="button">
                     <svg width="96" height="16">
                         <use href="./images/sprite.svg#icon-arrow-long-right"></use>
                     </svg>
@@ -805,5 +854,6 @@
             </div>
         <!-- </div> -->
     </footer>
+    <script src="./js/toggleMenu.js"></script>
 </body>
 </html> 
