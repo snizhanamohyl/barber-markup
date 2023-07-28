@@ -1,9 +1,58 @@
 .customers {
     position: relative;
 
+    @include tablet {
+        padding-top: 120px;
+        padding-bottom: 120px;
+    }
+
     & .title {
         color: var(--text-secondary);
         margin-bottom: 56px;
+
+        @include tablet {
+            margin-bottom: 88px;
+            width: 520px;
+
+            &::before {
+                top: 0.25em;
+            }
+        }
+
+        @include desktop {
+            width: auto;
+
+            &::before {
+                top: -0.4em;
+            }
+        }
+    }
+
+    & .arrows-nav {
+        @include tablet {
+            top: 276px;
+        }
+
+        @include desktop {
+            top: 166px;
+        }
+    }
+
+    & .slider__wrap {
+        min-width: 327px;
+        width: 100%;
+    }
+}
+
+.title__new-line {
+    padding-left: 56px;
+
+    @include tablet {
+        padding-left: 96px;
+    }
+
+    @include desktop {
+        padding-left: 0;
     }
 }
 

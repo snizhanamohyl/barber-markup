@@ -1,0 +1,38 @@
+.arrows-nav {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 32px;
+    transition: color var(--transition-color) var(--transition-function);
+
+    @include tablet {
+        margin-bottom: 0;
+        position: absolute;
+        top: 150px;
+        right: 32px;
+    }
+
+    @include desktop {
+        top: 190px;
+        right: 80px;
+    }
+
+    &-btn {
+        color: var(--accent);
+
+        & svg {
+            fill: currentColor;
+        }
+
+        &:hover {
+            color: var(--accent-hover);
+        }
+    }
+
+    &-btn[disabled] {
+        color: var(--grey-disabled);
+    } 
+}
+
+.btn-left {
+    margin-right: 32px;
+}

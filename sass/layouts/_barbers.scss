@@ -21,44 +21,6 @@
     }
 }
 
-.barbers__nav {
-    display: flex;
-    margin-bottom: 32px;
-    justify-content: center;
-    transition: color var(--transition-color) var(--transition-function);
-
-    @include tablet {
-        position: absolute;
-        top: 150px;
-        right: 32px;
-    }
-
-    @include desktop {
-        top: 190px;
-        right: 80px;
-    }
-
-    &-btn {
-        color: var(--accent);
-
-        & svg {
-            fill: currentColor;
-        }
-
-        &:hover {
-            color: var(--accent-hover);
-        }
-    }
-
-    &-btn[disabled] {
-        color: var(--grey-disabled);
-    } 
-}
-
-.btn-left {
-    margin-right: 32px;
-}
-
 .slider__wrap {
     overflow: hidden;
 }

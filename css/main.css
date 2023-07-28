@@ -173,6 +173,43 @@ br {
   fill: currentColor;
 }
 
+.arrows-nav {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
+  transition: color var(--transition-color) var(--transition-function);
+}
+@media screen and (min-width: 768px) {
+  .arrows-nav {
+    margin-bottom: 0;
+    position: absolute;
+    top: 150px;
+    right: 32px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .arrows-nav {
+    top: 190px;
+    right: 80px;
+  }
+}
+.arrows-nav-btn {
+  color: var(--accent);
+}
+.arrows-nav-btn svg {
+  fill: currentColor;
+}
+.arrows-nav-btn:hover {
+  color: var(--accent-hover);
+}
+.arrows-nav-btn[disabled] {
+  color: var(--grey-disabled);
+}
+
+.btn-left {
+  margin-right: 32px;
+}
+
 .header {
   padding-top: 36px;
   line-height: 0;
@@ -872,42 +909,6 @@ video {
   }
 }
 
-.barbers__nav {
-  display: flex;
-  margin-bottom: 32px;
-  justify-content: center;
-  transition: color var(--transition-color) var(--transition-function);
-}
-@media screen and (min-width: 768px) {
-  .barbers__nav {
-    position: absolute;
-    top: 150px;
-    right: 32px;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .barbers__nav {
-    top: 190px;
-    right: 80px;
-  }
-}
-.barbers__nav-btn {
-  color: var(--accent);
-}
-.barbers__nav-btn svg {
-  fill: currentColor;
-}
-.barbers__nav-btn:hover {
-  color: var(--accent-hover);
-}
-.barbers__nav-btn[disabled] {
-  color: var(--grey-disabled);
-}
-
-.btn-left {
-  margin-right: 32px;
-}
-
 .slider__wrap {
   overflow: hidden;
 }
@@ -985,6 +986,7 @@ video {
   margin-left: auto;
   margin-right: auto;
   padding-bottom: 0;
+  padding-top: 0;
 }
 
 .gallery__list {
@@ -1045,9 +1047,60 @@ video {
 .customers {
   position: relative;
 }
+@media screen and (min-width: 768px) {
+  .customers {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+}
 .customers .title {
   color: var(--text-secondary);
   margin-bottom: 56px;
+}
+@media screen and (min-width: 768px) {
+  .customers .title {
+    margin-bottom: 88px;
+    width: 520px;
+  }
+  .customers .title::before {
+    top: 0.25em;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .customers .title {
+    width: auto;
+  }
+  .customers .title::before {
+    top: -0.4em;
+  }
+}
+@media screen and (min-width: 768px) {
+  .customers .arrows-nav {
+    top: 276px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .customers .arrows-nav {
+    top: 166px;
+  }
+}
+.customers .slider__wrap {
+  min-width: 327px;
+  width: 100%;
+}
+
+.title__new-line {
+  padding-left: 56px;
+}
+@media screen and (min-width: 768px) {
+  .title__new-line {
+    padding-left: 96px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .title__new-line {
+    padding-left: 0;
+  }
 }
 
 .customers__list {
