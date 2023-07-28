@@ -1,0 +1,126 @@
+.footer {
+    background-color: var(--text-secondary);
+    padding-top: 40px;
+    padding-bottom: 80px;
+    font-size: 14px;
+    // padding-left: 24px;
+    // padding-right: 24px;
+
+    @include tablet {
+        padding-bottom: 64px;
+        // padding-left: 32px;
+        // padding-right: 32px;
+    }
+
+    @include desktop {
+        padding-top: 32px;
+        font-size: 16px;
+        // padding-left: 80px;
+        // padding-right: 80px;
+    }
+
+    &__title {
+        font-family: Impact;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: normal;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 16px;
+
+        @include tablet {
+            font-size: 22px;
+        }
+
+        @include desktop {
+            font-size: 24px;
+        }
+    }
+
+    // &__container {
+    //     border-top: 2px solid var(--accent);
+    // }
+}
+
+.footer .container {
+    border-top: 2px solid var(--accent);
+    padding-top: 24px;
+
+    @include tablet {
+        padding-right: 56px;
+    }
+
+    @include desktop {
+        padding-top: 32px;
+        display: flex;
+        justify-content: space-between;
+        gap: 172px;
+    }
+}
+
+.footer__wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 40px;
+
+    @include desktop {
+        gap: 96px;
+    }
+}
+
+.footer__item:not(:last-child),
+.footer__text:not(:last-child) {
+    margin-bottom: 4px;
+}
+
+.footer__contacts {
+    width: 100%;
+
+    &-wrap {
+        display: flex;
+        justify-content: space-between;
+
+        @include tablet {
+            gap: 40px;
+        }
+
+        @include desktop {
+            gap: 60px;
+        }
+    }
+
+    @include tablet {
+        width: auto;
+    }
+
+    & a {
+        text-decoration: none;
+        transition: color var(--transition-time) var(--transition-function);
+
+        &:hover,
+        &:focus {
+            color: var(--accent);
+        }
+    }
+}
+
+.footer__subscr {
+    margin-top: 40px;
+    width: min-content;
+    
+    @media screen and (max-width: 767px) {
+        margin-right: auto;
+        margin-left: auto;
+        text-align: center;
+    }
+
+    @include tablet {
+        padding-left: 128px;
+    }
+
+    @include desktop {
+        margin-top: 0;
+        padding-left: 0;
+    }
+}
