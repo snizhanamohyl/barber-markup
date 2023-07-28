@@ -41,6 +41,15 @@
     & .slider__wrap {
         min-width: 327px;
         width: 100%;
+        padding-left: 24px;
+
+        @include tablet {
+            padding-left: 32px;
+        }
+
+        @include desktop {
+            padding-left: 80px;
+        }
     }
 }
 
@@ -58,7 +67,8 @@
 
 .customers__list {
     display: flex;
-    width: calc(327px * 4);
+    gap: 24px;
+    width: calc(327px * 4 + 3 * 24px);
 
     @include tablet {
         gap: 32px;
