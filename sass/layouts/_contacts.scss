@@ -66,6 +66,16 @@
         line-height: normal;
         text-transform: uppercase;
         margin-bottom: 15px;
+        color: inherit;
+        transition: color var(--transition-time) var(--transition-function);
+
+        &:hover {
+            color: var(--accent-hover);
+        }
+
+        &.active {
+            color: var(--accent);
+        }
 
         @include desktop {
             font-size: 44px;

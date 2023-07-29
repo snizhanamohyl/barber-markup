@@ -1358,6 +1358,14 @@ video {
   line-height: normal;
   text-transform: uppercase;
   margin-bottom: 15px;
+  color: inherit;
+  transition: color var(--transition-time) var(--transition-function);
+}
+.contacts__item-title:hover {
+  color: var(--accent-hover);
+}
+.contacts__item-title.active {
+  color: var(--accent);
 }
 @media screen and (min-width: 1280px) {
   .contacts__item-title {
