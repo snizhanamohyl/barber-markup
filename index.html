@@ -311,19 +311,19 @@
             <h2 class="title">Наші барбери</h2>
             <p class="barbers__descr">Для справжніх поціновувачів атмосфери</p>
             <div class="arrows-nav">
-                <button class="btn-left arrows-nav-btn" type="button" disabled>
+                <button class="left arrows-nav-btn" type="button" disabled>
                     <svg width="96" height="16">
                         <use href="./images/sprite.svg#icon-arrow-long-left"></use>
                     </svg>
                 </button>
-                <button class="btn-right arrows-nav-btn" type="button">
+                <button class="right arrows-nav-btn" type="button">
                     <svg width="96" height="16" >
                         <use href="./images/sprite.svg#icon-arrow-long-right"></use>
                     </svg>
                 </button>
             </div>
             <div class="slider__wrap">
-                <ul class="barbers__list">
+                <ul class="barbers__list slider">
                     <li class="barbers__item">
                         <picture>
                             <source srcset="
@@ -589,7 +589,7 @@
                         <use href="./images/sprite.svg#icon-arrow-left"></use>
                     </svg>
                 </button>
-                <button class="gallery__btn" type="button">
+                <button class="gallery__btn right" type="button">
                     <svg width="20" height="32">
                         <use href="./images/sprite.svg#icon-arrow-right"></use>
                     </svg>
@@ -664,7 +664,6 @@
                         </picture>
                     </li>
                 </ul>
-
             </div>
         </section>
         <section class="customers">
@@ -673,12 +672,12 @@
                 </h2>
             </div>
             <div class="arrows-nav">
-                <button class="btn-left arrows-nav-btn" type="button" disabled>
+                <button class="left arrows-nav-btn" type="button" disabled>
                     <svg width="96" height="16">
                         <use href="./images/sprite.svg#icon-arrow-long-left"></use>
                     </svg>
                 </button>
-                <button class="btn-right arrows-nav-btn" type="button">
+                <button class="right arrows-nav-btn" type="button">
                     <svg width="96" height="16">
                         <use href="./images/sprite.svg#icon-arrow-long-right"></use>
                     </svg>
@@ -737,7 +736,7 @@
                     </li>
                     <li class="customers__item">
                         <div class="customer__wrap">
-                            <img class="customer__img" width="45px" height="45px" src="./images/customers/customer-3-tab.webp"
+                            <img class="customer__img" width="45px" height="45px" src="./images/customers/customer-4-tab.webp"
                                 alt="Ярослав Кузьмін">
                             <div class="customer__info">
                                 <h3 class="customer__name">Ярослав Кузьмін</h3>
@@ -855,5 +854,6 @@
         <!-- </div> -->
     </footer>
     <script src="./js/toggleMenu.js"></script>
+    <script src="./js/slider.js" defer></script>
 </body>
 </html> 

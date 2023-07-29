@@ -23,15 +23,14 @@
 
 .barbers__list {  
     display: flex;
-    width: calc(327px * 5);
+    gap: 32px;
+    width: calc(327px * 5 + 32px * 4);
 
     @include tablet {
-        gap: 32px;
         width: calc(336px * 5 + 32px * 4);
     }
 
     @include desktop {
-        gap: 32px;
         width: calc(352px * 5 + 32px * 4);
     }
 }

@@ -1,6 +1,7 @@
 .arrows-nav {
     display: flex;
     justify-content: center;
+    gap: 32px;
     margin-bottom: 32px;
     transition: color var(--transition-color) var(--transition-function);
 
@@ -31,8 +32,4 @@
     &-btn[disabled] {
         color: var(--grey-disabled);
     } 
-}
-
-.btn-left {
-    margin-right: 32px;
 }

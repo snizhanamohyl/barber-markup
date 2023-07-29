@@ -140,6 +140,17 @@ br {
 
 .slider__wrap {
     overflow: hidden;
+    scroll-behavior: smooth;
+    cursor: pointer;
+
+    & img {
+        pointer-events: none;
+    }
+
+    &.isDragging {
+        cursor: grab;
+        scroll-behavior: auto;
+    }
 }
 
 .visually-hidden {

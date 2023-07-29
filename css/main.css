@@ -159,6 +159,15 @@ br {
 
 .slider__wrap {
   overflow: hidden;
+  scroll-behavior: smooth;
+  cursor: pointer;
+}
+.slider__wrap img {
+  pointer-events: none;
+}
+.slider__wrap.isDragging {
+  cursor: grab;
+  scroll-behavior: auto;
 }
 
 .visually-hidden {
@@ -194,6 +203,7 @@ br {
 .arrows-nav {
   display: flex;
   justify-content: center;
+  gap: 32px;
   margin-bottom: 32px;
   transition: color var(--transition-color) var(--transition-function);
 }
@@ -222,10 +232,6 @@ br {
 }
 .arrows-nav-btn[disabled] {
   color: var(--grey-disabled);
-}
-
-.btn-left {
-  margin-right: 32px;
 }
 
 .mob-menu {
@@ -992,17 +998,16 @@ video {
 
 .barbers__list {
   display: flex;
-  width: 1635px;
+  gap: 32px;
+  width: 1763px;
 }
 @media screen and (min-width: 768px) {
   .barbers__list {
-    gap: 32px;
     width: 1808px;
   }
 }
 @media screen and (min-width: 1280px) {
   .barbers__list {
-    gap: 32px;
     width: 1888px;
   }
 }
