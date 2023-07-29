@@ -47,6 +47,7 @@
 
 video {
     display: block;
+    transition: opacity var(--transition-time) var(--transition-function);  
 }
 
 .about__video {

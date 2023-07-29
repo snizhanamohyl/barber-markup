@@ -506,6 +506,7 @@ br {
 
 video {
   display: block;
+  transition: opacity var(--transition-time) var(--transition-function);
 }
 
 .about__video {
@@ -1118,6 +1119,9 @@ video {
 }
 .gallery__btn:hover, .gallery__btn:focus {
   color: var(--accent-hover);
+}
+.gallery__btn[disabled] {
+  display: none;
 }
 .gallery__btn.left {
   left: 0px;

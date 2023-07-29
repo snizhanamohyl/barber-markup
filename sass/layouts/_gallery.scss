@@ -50,6 +50,10 @@
         color: var(--accent-hover);
     }
 
+    &[disabled] {
+       display: none;
+    }
+
     position: absolute;
     top: 50%;
     right: 0px;
