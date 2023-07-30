@@ -6,9 +6,19 @@ const chosenDayEl = document.querySelector(".calendar__header-day");
 const chosenDateEl = document.querySelector(".modal__chosen-date");
 
 let date = new Date(),
-  curYear = date.getFullYear(),
-  curMonth = date.getMonth(),
+  curYear,
+  curMonth,
+  curDay;
+
+const updateDate = (date) => {
+  curYear = date.getFullYear();
+  curMonth = date.getMonth();
   curDay = date.getDate();
+};
+
+const todayDate = new Date();
+
+updateDate(date);
 
 const months = [
   "Cічень",
@@ -24,7 +34,6 @@ const months = [
   "Листопад",
   "Грудень",
 ];
-
 const monthsCase = [
   "Cічня",
   "Лютого",
@@ -39,7 +48,6 @@ const monthsCase = [
   "Листопада",
   "Грудня",
 ];
-
 const shortenMonths = [
   "Cіч",
   "Лют",
@@ -54,22 +62,23 @@ const shortenMonths = [
   "Лис",
   "Груд",
 ];
+
 const days = [
+  "Неділя",
   "Понеділок",
   "Вівторок",
   "Середа",
   "Четвер",
   "П'ятниця",
   "Субота",
-  "Неділя",
 ];
-const shortenDays = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Нд"];
-
-const todayDate = new Date();
+const shortenDays = ["Нд", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"];
 
 let calendarMarkup = "";
 
 const renderCalendar = () => {
+  calendarMarkup = "";
+
   let firstDayOfMonth = new Date(curYear, curMonth, 1).getDay();
   let lastDateOfMonth = new Date(curYear, curMonth + 1, 0).getDate();
 
@@ -78,14 +87,21 @@ const renderCalendar = () => {
   }
 
   for (let i = 1; i <= lastDateOfMonth; i += 1) {
-    let isToday =
-      i === todayDate.getDate() &&
+    const isCurrent =
+      i === date.getDate() &&
+      curMonth === date.getMonth() &&
+      curYear === date.getFullYear();
+
+    const isPast =
+      i < todayDate.getDate() &&
       curMonth === todayDate.getMonth() &&
       curYear === todayDate.getFullYear();
 
-    calendarMarkup += `<li class="calendar__item"><button class="calendar__item-btn ${
-      isToday ? "current" : ""
-    }">${i}</button></li>`;
+    calendarMarkup += `<li class="calendar__item"><button value=${i} class="calendar__item-btn ${
+      isCurrent ? "current" : ""
+    } ${isPast ? "disabled" : ""}" ${
+      isPast ? "disabled" : ""
+    }>${i}</button></li>`;
   }
 
   currentDate.innerText = `${months[curMonth]} ${curYear}`;
@@ -111,13 +127,29 @@ const onNavBtnClick = (e) => {
   if (curMonth < 0 || curMonth > 11) {
     date = new Date(curYear, curMonth);
 
-    curYear = date.getFullYear();
-    curMonth = date.getMonth();
+    updateDate(date);
+  }
+
+  if (curMonth <= todayDate.getMonth() && curYear === todayDate.getFullYear()) {
+    navBtns[0].classList.add("hidden");
+  } else {
+    navBtns[0].classList.remove("hidden");
   }
 
   renderCalendar();
 };
 
+const onCalendarClick = (e) => {
+  if (e.target.nodeName !== "BUTTON") return;
+
+  newDate = e.target.value;
+  date = new Date(curYear, curMonth, newDate);
+  updateDate(date);
+
+  renderCalendar();
+};
+
 navBtns.forEach((btn) => btn.addEventListener("click", onNavBtnClick));
+monthWrap.addEventListener("click", onCalendarClick);
 
 renderCalendar();

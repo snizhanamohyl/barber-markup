@@ -309,7 +309,6 @@ br {
 
 .modal {
   width: 375px;
-  overflow-y: scroll;
   background-color: var(--bg-secondary);
   position: absolute;
   top: 50%;
@@ -406,6 +405,10 @@ br {
   color: var(--accent);
   transition: color var(--transition-time) var(--transition-function);
 }
+.calendar__nav.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
 .calendar__nav:hover {
   color: var(--text-primary);
 }
@@ -443,13 +446,15 @@ br {
   font-weight: 400;
   line-height: 1.5;
   border-radius: 50%;
-  transition: background-color var(--transition-time) var(--transition-function);
+  opacity: 1;
+  transition: background-color var(--transition-time) var(--transition-function), opacity var(--transition-time) var(--transition-function);
 }
 .calendar__item-btn:hover {
   background-color: var(--accent);
 }
-.calendar__item-btn.disabled {
+.calendar__item-btn[disabled] {
   color: var(--grey);
+  pointer-events: none;
 }
 
 .current {

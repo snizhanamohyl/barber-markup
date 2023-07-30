@@ -31,10 +31,16 @@
         color: var(--accent);
         transition: color var(--transition-time) var(--transition-function);
 
+        &.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
         &:hover {
             color: var(--text-primary);
         }
-       & svg {
+        
+        & svg {
             fill: currentColor;
         }
     }
@@ -69,14 +75,16 @@
         font-weight: 400;
         line-height: 1.5;
         border-radius: 50%;
-        transition: background-color var(--transition-time) var(--transition-function);
+        opacity: 1;
+        transition: background-color var(--transition-time) var(--transition-function), opacity var(--transition-time) var(--transition-function);
 
         &:hover {
             background-color: var(--accent);
         }
 
-        &.disabled {
+        &[disabled] {
             color: var(--grey);
+            pointer-events: none;
         }
     }
 }
