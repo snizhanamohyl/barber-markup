@@ -3,6 +3,7 @@
   --text-secondary: #232830;
   --accent: #F24E1E;
   --accent-hover: #EC4210;
+  --error-bg: rgba(236, 66, 16, 0.10);
   --bg-primary: #D9D9D9;
   --bg-secondary: #323843;
   --grey: #7B7B7B;
@@ -1063,13 +1064,266 @@ video {
   margin-bottom: 24px;
 }
 
+.booking {
+  background-color: var(--text-secondary);
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (min-width: 768px) {
+  .booking {
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 120px 32px;
+    background-color: var(--text-primary);
+  }
+}
+@media screen and (min-width: 768px) and (min-width: 1280px) {
+  .booking {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .booking__info {
+    padding-left: 16px;
+    position: relative;
+  }
+  .booking__info::before {
+    content: "";
+    display: inline-block;
+    border-top: 3px solid var(--accent);
+    width: 96px;
+    position: absolute;
+    top: 20px;
+    left: -112px;
+  }
+}
+.booking::before {
+  content: "";
+  display: block;
+  width: 375px;
+  height: 464px;
+  margin-left: auto;
+  margin-right: auto;
+  background-size: cover;
+  background-image: url(../images/booking/booking-bg-mob.webp);
+}
+@media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+  .booking::before {
+    background-image: url(../images/booking/booking-bg-mob@2x.webp);
+  }
+}
+@media screen and (min-width: 768px) {
+  .booking::before {
+    margin: 0;
+    width: 184px;
+    height: 707px;
+    background-image: url(../images/booking/booking-bg-tab.webp);
+  }
+}
+@media screen and (min-width: 768px) and (min-device-pixel-ratio: 2), screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 768px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (min-resolution: 2dppx) {
+  .booking::before {
+    background-image: url(../images/booking/booking-bg-tab@2x.webp);
+  }
+}
+@media screen and (min-width: 1280px) {
+  .booking::before {
+    width: 578px;
+    background-image: url(../images/booking/booking-bg-desk.webp);
+  }
+}
+@media screen and (min-width: 1280px) and (min-device-pixel-ratio: 2), screen and (min-width: 1280px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 1280px) and (min-resolution: 192dpi), screen and (min-width: 1280px) and (min-resolution: 2dppx) {
+  .booking::before {
+    background-image: url(../images/booking/booking-bg-desk@2x.webp);
+  }
+}
+.booking .container {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background-color: var(--text-secondary);
+}
+@media screen and (min-width: 768px) {
+  .booking .container {
+    margin: 0;
+    padding: 64px 64px 64px 40px;
+    width: auto;
+  }
+}
+.booking__title {
+  font-family: Impact;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+@media screen and (min-width: 768px) {
+  .booking__title {
+    font-size: 44px;
+    margin-bottom: 8px;
+  }
+}
+.booking__descr {
+  font-size: 14px;
+  margin-bottom: 32px;
+}
+@media screen and (min-width: 768px) {
+  .booking__descr {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .booking .hero__btn {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .booking .hero__btn {
+    padding: 8px 24px;
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .booking form {
+    width: 416px;
+  }
+}
+
+.booking__input {
+  color: inherit;
+  font-size: 16px;
+  line-height: 1.5;
+  width: 100%;
+  padding: 16px 16px 16px 52px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+.booking__input-wrap {
+  cursor: pointer;
+  position: relative;
+  display: block;
+  color: var(--bg-primary);
+  border: 1px solid var(--bg-primary);
+  transition: color var(--transition-time) var(--transition-function), border-color var(--transition-time) var(--transition-function);
+}
+.booking__input-wrap:not(:last-child) {
+  margin-bottom: 24px;
+}
+.booking__input-wrap:hover, .booking__input-wrap:focus, .booking__input-wrap:focus-within {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.booking__input-wrap:hover input, .booking__input-wrap:focus input, .booking__input-wrap:focus-within input {
+  color: var(--bg-primary);
+  caret-color: var(--accent);
+}
+.booking__input-wrap.changed {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.booking__input-wrap.error {
+  color: var(--accent);
+  background-color: var(--error-bg);
+  border-color: var(--accent);
+}
+.booking__input-wrap.error .error-msg {
+  display: block;
+  position: absolute;
+  top: 37px;
+  left: 0;
+}
+.booking__input::-moz-placeholder {
+  color: var(--bg-primary);
+}
+.booking__input::placeholder {
+  color: var(--bg-primary);
+}
+
+.booking__icon {
+  position: absolute;
+  top: 18px;
+  left: 16px;
+  fill: currentColor;
+}
+
+.error-msg {
+  display: none;
+}
+
+.select button {
+  color: inherit;
+  font-family: Arial;
+  font-size: 14px;
+  line-height: 1.5;
+  position: relative;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.select__btn {
+  padding: 16px 52px;
+}
+.select__btn-text {
+  height: 24px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 16px;
+}
+
+.select {
+  position: relative;
+}
+
+.select__icon {
+  position: absolute;
+  top: 18px;
+  right: 16px;
+  stroke: currentColor;
+  transition: transform var(--transition-time) var(--transition-function);
+}
+.select__icon.open {
+  transform: rotate(180deg);
+}
+
+.options {
+  display: none;
+  position: absolute;
+  z-index: 10;
+  top: calc(100% + 4px);
+  left: 0;
+  width: 100%;
+}
+.options__item {
+  width: 100%;
+  transition: color var(--transition-time) var(--transition-function), border-color var(--transition-time) var(--transition-function);
+}
+.options__item:nth-child(2n) {
+  background-color: var(--text-secondary);
+}
+.options__item:hover, .options__item:focus {
+  color: var(--accent);
+}
+.options__btn {
+  width: 100%;
+  padding: 12px 16px;
+  background-color: var(--bg-secondary);
+  justify-content: flex-start;
+  text-align: left;
+  font-size: 14px;
+}
+
 .gallery {
   position: relative;
   max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
   padding-bottom: 0;
-  padding-top: 0;
 }
 
 .gallery__list {

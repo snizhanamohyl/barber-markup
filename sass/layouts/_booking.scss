@@ -1,0 +1,270 @@
+.booking {
+    background-color: var(--text-secondary);
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include tablet {
+        display: flex; 
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 120px 32px;
+        background-color: var(--text-primary);
+
+        
+        @include desktop {
+            padding-left: 80px;
+            padding-right: 80px;
+        }
+
+        &__info {
+            padding-left: 16px;
+            position: relative;
+
+            &::before {
+                content: "";
+                display: inline-block;
+                border-top: 3px solid var(--accent);
+                width: 96px;
+                position: absolute;
+                top: 20px;
+                left: -112px;
+            }
+        }
+    }
+   
+    &::before {
+        content: '';
+        display: block;
+        width: 375px;
+        height: 464px;
+        margin-left: auto;
+        margin-right: auto;
+        background-size: cover;
+        background-image: url(../images/booking/booking-bg-mob.webp);
+        
+        @include retina {
+            background-image: url(../images/booking/booking-bg-mob@2x.webp);
+        }
+
+        @include tablet {
+            margin: 0;
+            width: 184px;
+            height: 707px;
+            background-image: url(../images/booking/booking-bg-tab.webp);
+
+            @include retina {
+                background-image: url(../images/booking/booking-bg-tab@2x.webp);
+            }
+        }
+
+        @include desktop {
+            width: 578px;
+            background-image: url(../images/booking/booking-bg-desk.webp);
+
+            @include retina {
+                background-image: url(../images/booking/booking-bg-desk@2x.webp);
+            }
+        }
+    }
+
+    & .container {
+        padding-top: 80px;
+        padding-bottom: 80px;
+        background-color: var(--text-secondary);
+
+        @include tablet {
+            margin: 0;
+            padding: 64px 64px 64px 40px;
+            width: auto;
+        }
+    }
+
+    &__title {
+        font-family: Impact;
+        font-size: 32px;
+        font-weight: 400;
+        line-height: normal;
+        text-transform: uppercase;
+        margin-bottom: 4px;
+
+        @include tablet {
+            font-size: 44px;
+            margin-bottom: 8px;
+        }
+    }
+
+    &__descr {
+        font-size: 14px;
+        margin-bottom: 32px;
+
+        @include tablet {
+            font-size: 16px;
+        }
+    }
+
+    & .hero__btn {
+        @media screen and (max-width: 767px) {
+            width: 100%;
+        }
+
+        @include tablet {
+            padding: 8px 24px;
+            font-size: 24px;
+        }
+    }
+
+    & form {
+        @include tablet {
+            width: 416px;
+        }
+    }
+}
+
+// input:autofill {
+//     background-color: transparent !important; 
+//     font-size: inherit !important;
+//     line-height: inherit !important;
+//     font-style: inherit !important;
+//     color: inherit !important;
+// }
+
+.booking__input {
+    color: inherit;
+    font-size: 16px;
+    line-height: 1.5;
+    width: 100%;
+    padding: 16px 16px 16px 52px;
+    background-color: transparent;
+    outline: none;
+    border: none;
+
+    &-wrap {
+        cursor: pointer;
+        position: relative;
+        display: block;
+        color: var(--bg-primary);
+        border: 1px solid var(--bg-primary);
+        transition: color var(--transition-time) var(--transition-function), border-color var(--transition-time) var(--transition-function);
+
+        &:not(:last-child) {
+            margin-bottom: 24px;
+        }
+
+        
+        &:hover, &:focus, &:focus-within {
+            color: var(--accent);  
+            border-color: var(--accent);
+            
+            & input {
+                color: var(--bg-primary);
+                caret-color: var(--accent);
+            }
+        }
+
+        &.changed {
+            color: var(--accent);
+            border-color: var(--accent);
+        }
+
+        &.error {
+            color: var(--accent);
+            background-color: var(--error-bg);
+            border-color: var(--accent);
+
+            & .error-msg {
+                display: block;
+                position: absolute;
+                top: 37px;;
+                left: 0;
+            }
+        }
+    }
+
+    &::placeholder {
+        color: var(--bg-primary);        
+    }
+}
+
+.booking__icon {
+    position: absolute;
+    top: 18px;
+    left: 16px;
+    fill: currentColor;
+}
+
+.error-msg {
+    display: none;
+}
+
+.select button {
+    color: inherit;
+    font-family: Arial;
+    font-size: 14px;
+    line-height: 1.5;
+    position: relative;
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.select__btn {
+    padding: 16px 52px;
+
+    &-text {
+        height: 24px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        font-size: 16px;
+    }
+}
+
+.select {
+    position: relative;
+}
+
+.select__icon {
+    position: absolute;
+    top: 18px;
+    right: 16px;
+    stroke: currentColor;
+    transition: transform var(--transition-time) var(--transition-function);
+
+    &.open {
+        transform: rotate(180deg);
+    }
+}
+
+.options {
+    display: none;
+    position: absolute;
+    z-index: 10;
+    top: calc(100% + 4px);
+    left: 0;
+    width: 100%;
+
+    &__item {
+        width: 100%;
+        transition: color var(--transition-time) var(--transition-function), border-color var(--transition-time) var(--transition-function);
+
+        &:nth-child(2n) {
+            background-color: var(--text-secondary);
+        }
+        
+        &:hover,
+        &:focus {
+            color: var(--accent);
+        }
+    }
+
+    &__btn {
+        width: 100%;
+        padding: 12px 16px;
+        background-color: var(--bg-secondary);
+        justify-content: flex-start;
+        text-align: left;
+        font-size: 14px;
+    }
+}
