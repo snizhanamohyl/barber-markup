@@ -169,6 +169,11 @@
             border-color: var(--accent);
         }
 
+        &.disabled {
+            color: var(--grey);
+            border-color: var(--grey);
+        }
+
         &.error {
             color: var(--accent);
             background-color: var(--error-bg);
@@ -202,7 +207,6 @@
 .select button {
     color: inherit;
     font-family: Arial;
-    font-size: 14px;
     line-height: 1.5;
     position: relative;
     justify-content: flex-start;
@@ -226,6 +230,7 @@
 }
 
 .select__icon {
+    pointer-events: all;
     position: absolute;
     top: 18px;
     right: 16px;

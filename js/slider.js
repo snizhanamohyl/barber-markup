@@ -8,10 +8,6 @@ sliders.forEach((slider) => {
   if (navBtns.length === 0) {
     navBtns = slider.querySelectorAll(".gallery__btn");
     cardWidth = sliderFirstCard.clientWidth;
-    console.log(
-      "🚀 ~ file: slider.js:11 ~ sliders.forEach ~ cardWidth:",
-      cardWidth
-    );
   }
 
   let isDragStart = false,

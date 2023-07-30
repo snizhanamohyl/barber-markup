@@ -296,6 +296,166 @@ br {
   fill: currentColor;
 }
 
+.backdrop {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  transition: opacity 500ms var(--transition-function);
+}
+
+.modal {
+  width: 375px;
+  overflow-y: scroll;
+  background-color: var(--bg-secondary);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.modal .close-btn {
+  top: 14px;
+  right: 14px;
+}
+.modal .container {
+  width: 375px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.modal__head {
+  text-align: center;
+  font-family: Arial;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  background-color: var(--text-secondary);
+}
+
+.modal__main-title {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.accent {
+  color: var(--accent);
+  font-family: Impact;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.modal__title {
+  font-family: Impact;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 16px;
+}
+
+.modal__input-wrap:not(:last-child) {
+  margin-bottom: 40px;
+}
+
+.modal__inputs {
+  margin-bottom: 40px;
+}
+
+.modal__btn {
+  color: var(--text-secondary);
+  padding: 8px 24px;
+  background-color: var(--accent);
+  margin-left: auto;
+  transition: background-color var(--transition-time) var(--transition-function);
+}
+.modal__btn:hover, .modal__btn:focus {
+  background-color: var(--accent-hover);
+}
+
+.calendar {
+  margin-bottom: 60px;
+}
+.calendar__header {
+  color: var(--text-secondary);
+  font-size: 14px;
+  padding: 8px 16px;
+  background-color: var(--accent);
+}
+.calendar__body {
+  padding: 40px 28px 12px;
+  background-color: var(--text-secondary);
+}
+.calendar__body-title {
+  font-family: Impact;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+}
+.calendar__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.calendar__nav {
+  color: var(--accent);
+  transition: color var(--transition-time) var(--transition-function);
+}
+.calendar__nav:hover {
+  color: var(--text-primary);
+}
+.calendar__nav svg {
+  fill: currentColor;
+}
+
+.calendar__week {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.calendar__month {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 8px;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
+}
+
+.calendar__item {
+  width: calc((100% - 96px) / 7);
+  text-align: center;
+  height: 24px;
+}
+.calendar__item-btn {
+  width: 100%;
+  height: 100%;
+  color: inherit;
+  font-family: Arial;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  border-radius: 50%;
+  transition: background-color var(--transition-time) var(--transition-function);
+}
+.calendar__item-btn:hover {
+  background-color: var(--accent);
+}
+.calendar__item-btn.disabled {
+  color: var(--grey);
+}
+
+.current {
+  background-color: var(--accent);
+}
+
 .header {
   padding-top: 36px;
   line-height: 0;
@@ -1226,6 +1386,10 @@ video {
   color: var(--accent);
   border-color: var(--accent);
 }
+.booking__input-wrap.disabled {
+  color: var(--grey);
+  border-color: var(--grey);
+}
 .booking__input-wrap.error {
   color: var(--accent);
   background-color: var(--error-bg);
@@ -1258,7 +1422,6 @@ video {
 .select button {
   color: inherit;
   font-family: Arial;
-  font-size: 14px;
   line-height: 1.5;
   position: relative;
   justify-content: flex-start;
@@ -1281,6 +1444,7 @@ video {
 }
 
 .select__icon {
+  pointer-events: all;
   position: absolute;
   top: 18px;
   right: 16px;

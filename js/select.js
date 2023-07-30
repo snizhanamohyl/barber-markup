@@ -1,14 +1,29 @@
-const inputs = document.querySelectorAll(".booking__input");
+const inputs = document.querySelectorAll("input");
+const selectBtns = document.querySelectorAll(".select__btn");
+const dateBtnWrap = document.querySelector(".booking__date");
 
 const onInputChange = (input) => {
   input.closest(".booking__input-wrap").classList.add("changed");
+  checkIfDateBtnDisabled();
 };
 
 inputs.forEach((input) =>
   input.addEventListener("change", () => onInputChange(input))
 );
 
-const selectBtns = document.querySelectorAll(".select__btn");
+checkIfDateBtnDisabled = () => {
+  const isEmpty = [...inputs].some((input) => input.value == "");
+
+  if (isEmpty || selectBtns[0].value === "") {
+    dateBtnWrap.classList.add("disabled");
+    dateBtnWrap.setAttribute("disabled", true);
+    return;
+  }
+
+  dateBtnWrap.classList.remove("disabled");
+  dateBtnWrap.removeAttribute("disabled");
+};
+
 selectBtns.forEach((selectBtn) => {
   const selectEl = selectBtn.closest(".select");
   const options = selectEl.querySelector(".options");
@@ -35,6 +50,7 @@ selectBtns.forEach((selectBtn) => {
     selectBtn.value = e.target.value;
     selectBtn.querySelector("p").innerText = e.target.innerText;
     onInputChange(selectBtn);
+    checkIfDateBtnDisabled();
 
     toggleDropdown();
   };
