@@ -1,3 +1,5 @@
+// import { availableTimeData } from "./available-time-data";
+
 const currentDate = document.querySelector(".current-date");
 const monthWrap = document.querySelector(".calendar__month");
 const navBtns = document.querySelectorAll(".calendar__nav");
@@ -17,6 +19,8 @@ const updateDate = (date) => {
 };
 
 const todayDate = new Date();
+const todayHour = todayDate.getHours();
+const todayMinute = todayDate.getMinutes();
 
 updateDate(date);
 
@@ -128,6 +132,7 @@ const onNavBtnClick = (e) => {
     date = new Date(curYear, curMonth);
 
     updateDate(date);
+    renderTimeList();
   }
 
   if (curMonth <= todayDate.getMonth() && curYear === todayDate.getFullYear()) {
@@ -145,6 +150,7 @@ const onCalendarClick = (e) => {
   newDate = e.target.value;
   date = new Date(curYear, curMonth, newDate);
   updateDate(date);
+  renderTimeList();
 
   renderCalendar();
 };
@@ -153,3 +159,121 @@ navBtns.forEach((btn) => btn.addEventListener("click", onNavBtnClick));
 monthWrap.addEventListener("click", onCalendarClick);
 
 renderCalendar();
+
+// ----------------------------------------------
+
+const nowDate = new Date();
+
+const nowDateYear = nowDate.getFullYear();
+const nowDateMonth = nowDate.getMonth();
+const nowDateDay = nowDate.getDate();
+
+const keysArray = [];
+
+const tightness = 0.6;
+
+for (let i = 0; i < 90; i += 1) {
+  const dateStr = new Date(
+    nowDateYear,
+    nowDateMonth,
+    nowDateDay + i
+  ).toLocaleDateString("en-US");
+
+  keysArray.push(dateStr);
+}
+
+const basicPossibleTimeList = [
+  "10:00",
+  "10:30",
+  "11:00",
+  "11:30",
+  "12:00",
+  "12:30",
+  "13:00",
+  "13:30",
+  "14:00",
+  "14:30",
+  "15:00",
+  "15:30",
+  "16:00",
+  "16:30",
+  "17:00",
+  "17:30",
+  "18:00",
+  "18:30",
+  "19:00",
+  "19:30",
+  "20:00",
+  "20:30",
+  "21:00",
+];
+
+const availableTimeData = {};
+
+const daysWithSameTightness = 4;
+
+const oneDayAvailableWindows = (tightness) => {
+  return basicPossibleTimeList.filter(() => Math.random() <= tightness);
+};
+
+const generateAvailableTimeData = () => {
+  let counter = 0;
+
+  for (
+    let i = tightness;
+    i >= 0;
+    i -= tightness / (90 / daysWithSameTightness)
+  ) {
+    const splicedArr = [...keysArray].splice(
+      counter * daysWithSameTightness,
+      daysWithSameTightness
+    );
+
+    for (let j = 0; j < daysWithSameTightness; j += 1) {
+      splicedArr.map(
+        (key) => (availableTimeData[key] = oneDayAvailableWindows(i))
+      );
+    }
+    counter += 1;
+  }
+};
+
+generateAvailableTimeData();
+
+// ----------------------------------------------
+
+const timeListEl = document.querySelector(".time__list");
+
+const isSmallHeight = window.innerHeight < 900;
+
+const renderTimeList = () => {
+  let timeListMarkup = "";
+
+  const availableWindows = availableTimeData[date.toLocaleDateString("en-US")];
+
+  const isToday =
+    curDay === todayDate.getDate() &&
+    curMonth === todayDate.getMonth() &&
+    curYear === todayDate.getFullYear();
+
+  for (i = 10; i <= 21; i += 0.5) {
+    const timeText = Number.isInteger(i) ? `${i}:00` : `${Math.floor(i)}:30`;
+    const isNotAvailable = availableWindows.find((time) => time === timeText);
+
+    if (isToday) {
+      const nowTime = todayHour + todayMinute / 60;
+
+      timeListMarkup += `<li class="time__item"><button class="time__btn" ${
+        i < nowTime || isNotAvailable ? "disabled" : ""
+      }>${timeText}</button></li>`;
+    } else {
+      timeListMarkup += `<li class="time__item"><button class="time__btn" ${
+        isNotAvailable ? "disabled" : ""
+      }>${timeText}</button></li>`;
+    }
+  }
+  // isSmallHeight ;
+  timeListEl.innerHTML = timeListMarkup;
+};
+
+renderTimeList();

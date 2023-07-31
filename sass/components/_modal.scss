@@ -80,3 +80,49 @@
         background-color: var(--accent-hover);
     }
 }
+
+.time {
+    &__list {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        row-gap: 24px;
+        column-gap: 8px;
+    }
+
+    &__item {
+        flex-basis: calc((100% - 8px * 2) / 3);
+    }
+
+    &__btn {
+        font-family: Impact;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: normal;
+        width: 100%;
+        height: 48px;
+        background-color: var(--text-primary);
+        transition: background-color var(--transition-time) var(--transition-function);
+
+        &.active {
+           background-color: var(--accent);
+        }
+
+        &[disabled] {
+            color: var(--text-secondary);
+            pointer-events: none;
+            background-color: var(--grey);
+        }
+    }
+}
+
+.modal__btn-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 60px;
+
+    & button:first-child {
+        margin-left: 0;
+    }
+}
