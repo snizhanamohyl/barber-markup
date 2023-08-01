@@ -4,6 +4,7 @@
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 10;
     background: rgba(0, 0, 0, 0.2);
     opacity: 1;
     transition: opacity 500ms var(--transition-function);
@@ -21,7 +22,7 @@
         top: 14px;
         right: 14px;
     }
-    
+
     & .container {
         width: 375px;
         padding-top: 40px;
