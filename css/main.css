@@ -354,6 +354,12 @@ br {
     padding: 60px 112px;
   }
 }
+@media screen and (min-width: 1280px) {
+  .modal .container {
+    width: 1024px;
+    padding: 56px;
+  }
+}
 
 .modal__head {
   text-align: center;
@@ -422,6 +428,11 @@ br {
 .time__item {
   flex-basis: calc((100% - 16px) / 3);
 }
+@media screen and (min-width: 1280px) {
+  .time__item {
+    flex-basis: calc((100% - 48px) / 7);
+  }
+}
 .time__btn {
   font-family: Impact;
   font-size: 24px;
@@ -447,8 +458,29 @@ br {
   align-items: center;
   margin-top: 60px;
 }
-.modal__btn-wrap button:first-child {
+.modal__btn-wrap button {
   margin-left: 0;
+}
+@media screen and (min-width: 1280px) {
+  .modal__btn-wrap {
+    justify-content: flex-end;
+    gap: 24px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .modal__date-content {
+    display: flex;
+    flex-direction: column;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .modal__date-content {
+    width: 480px;
+  }
 }
 
 .calendar {
@@ -460,6 +492,11 @@ br {
     margin-bottom: 56px;
   }
 }
+@media screen and (min-width: 1280px) {
+  .calendar {
+    justify-content: center;
+  }
+}
 .calendar__header {
   color: var(--text-secondary);
   font-size: 14px;
@@ -469,6 +506,7 @@ br {
 @media screen and (min-width: 768px) {
   .calendar__header {
     padding: 24px;
+    flex-grow: 1;
   }
 }
 .calendar__body {

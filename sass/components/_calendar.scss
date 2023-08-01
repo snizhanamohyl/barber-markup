@@ -5,6 +5,10 @@
         display: flex;
         margin-bottom: 56px;
     }
+
+    @include desktop {
+        justify-content: center;
+    }
     
     &__header {
         color: var(--text-secondary);
@@ -14,7 +18,10 @@
 
         @include tablet {
             padding: 24px;
+            flex-grow: 1;
         }
+
+
     }
 
     &__body {
