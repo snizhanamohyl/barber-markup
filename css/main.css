@@ -17,6 +17,10 @@
   --desktop-breakpoint: 1280px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: "Arial", sans-serif;
@@ -109,7 +113,7 @@ ul {
   }
 }
 
-button {
+.button, button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -183,6 +187,27 @@ br {
   -webkit-clip-path: inset(50%);
           clip-path: inset(50%);
   margin: -1px;
+}
+
+.scroll-to-top-btn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 64px;
+  height: 64px;
+  z-index: 9;
+  border-radius: 50%;
+  background-color: rgba(35, 40, 48, 0.8);
+  transition: background-color var(--transition-time) var(--transition-function);
+  color: var(--accent);
+}
+.scroll-to-top-btn:hover {
+  background-color: rgba(35, 40, 48, 0.7);
+}
+.scroll-to-top-btn svg {
+  fill: currentColor;
+  transform: rotate(90deg);
 }
 
 .socials {
@@ -647,6 +672,7 @@ br {
   margin-left: auto;
   margin-right: auto;
   padding: 13px 105px;
+  text-decoration: none;
   color: var(--text-secondary);
   background-color: var(--accent);
   transition: background-color var(--transition-time) var(--transition-function);
