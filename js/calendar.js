@@ -10,7 +10,8 @@ const chosenDateEl = document.querySelector(".modal__chosen-date");
 let date = new Date(),
   curYear,
   curMonth,
-  curDay;
+  curDay,
+  curTime;
 
 const updateDate = (date) => {
   curYear = date.getFullYear();
@@ -80,6 +81,11 @@ const shortenDays = ["Нд", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"];
 
 let calendarMarkup = "";
 
+const updateChosenDateText = () => {
+  chosenDateEl.innerText = `${days[date.getDay()]}, ${curDay} ${
+    monthsCase[curMonth]
+  } ${curYear} року${curTime ? `, ${curTime}` : ""}`;
+};
 const renderCalendar = () => {
   calendarMarkup = "";
 
@@ -116,9 +122,7 @@ const renderCalendar = () => {
     shortenMonths[curMonth]
   } ${curDay}`;
 
-  chosenDateEl.innerText = `${days[date.getDay()]}, ${curDay} ${
-    monthsCase[curMonth]
-  } ${curYear} року`;
+  updateChosenDateText();
 
   monthWrap.innerHTML = calendarMarkup;
 };
@@ -263,11 +267,11 @@ const renderTimeList = () => {
     if (isToday) {
       const nowTime = todayHour + todayMinute / 60;
 
-      timeListMarkup += `<li class="time__item"><button class="time__btn" ${
+      timeListMarkup += `<li class="time__item"><button class="time__btn" data-time="${timeText}" ${
         i < nowTime || isNotAvailable ? "disabled" : ""
       }>${timeText}</button></li>`;
     } else {
-      timeListMarkup += `<li class="time__item"><button class="time__btn" ${
+      timeListMarkup += `<li class="time__item"><button class="time__btn" data-time="${timeText}" ${
         isNotAvailable ? "disabled" : ""
       }>${timeText}</button></li>`;
     }
@@ -276,4 +280,37 @@ const renderTimeList = () => {
   timeListEl.innerHTML = timeListMarkup;
 };
 
+const finishBtn = backdrop.querySelector(".modal-finish");
+
+const updateDateWithTime = () => {
+  date = new Date([curYear, curMonth + 1, curDay, curTime]);
+};
+
+const onTimePick = (e) => {
+  if (e.target.nodeName !== "BUTTON") return;
+
+  curTime = e.target.dataset.time;
+  updateDateWithTime();
+
+  const oldActiveTime = timeListEl.querySelector(".active");
+
+  oldActiveTime?.classList.remove("active");
+  e.target.classList.add("active");
+  finishBtn.removeAttribute("disabled");
+
+  updateChosenDateText();
+};
+
+const dateInput = document.querySelector(".booking__date");
+
+const onFinish = () => {
+  const chosenDate = `${date.toLocaleDateString("en-US")}, ${curTime}`;
+
+  dateInput.value = chosenDate;
+  dateInput.innerText = chosenDate;
+  dateInput.closest(".booking__input-wrap").classList.add("changed");
+};
+
+timeListEl.addEventListener("click", onTimePick);
+finishBtn.addEventListener("click", onFinish);
 renderTimeList();

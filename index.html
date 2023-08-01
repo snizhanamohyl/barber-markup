@@ -649,11 +649,11 @@
                                     Старший барбер</button></li>
                         </ul>
                     </div>
-                    <div class="booking__input-wrap select disabled">
+                    <div class="booking__input-wrap time-input select disabled">
                         <svg class="booking__icon" width="20" height="20">
                             <use href="./images/sprite.svg#icon-calendar"></use>
                         </svg>
-                        <button class="booking__input booking__date" type="button" value="" disabled>Оберіть дату та час</button>
+                        <button class="booking__input booking__date" type="button" disabled>Оберіть дату та час</button>
                     </div>
                     <button class="hero__btn" type="submit">Записатися</button>
                 </form>
@@ -935,7 +935,7 @@
             <use href="./images/sprite.svg#icon-arrow-left"></use>
         </svg>
     </button>
-    <div class="backdrop ">
+    <div class="backdrop visually-hidden">
         <div class="modal">
             <button class="close-btn" type="button">
                 <svg width="32" height="32">
@@ -1039,34 +1039,10 @@
                 </div>
                 <div class="modal__time-content">
                     <h3 class="modal__title">Час</h3>
-                    <ul class="time__list">
-                        <li class="time__item"><button disabled class="time__btn">10:00</button></li>
-                        <li class="time__item"><button class="time__btn">10:00</button></li>
-                        <li class="time__item"><button class="active time__btn">10:00</button></li>
-                        <li class="time__item"><button class="time__btn">10:00</button></li>
-                        <li class="time__item"><button class="time__btn">10:00</button></li>
-                        <li class="time__item"><button class="time__btn">10:00</button></li>
-                        <li class="time__item"><button class="time__btn">10:00</button></li>
-                        <li class="time__item"><button class="time__btn">10:00</button></li>
-                        <li class="time__item"><button class="time__btn">10:00</button></li>
-                        <li class="time__item"><button class="time__btn">10:00</button></li>
-                        <li class="time__item"><button class="time__btn">10:00</button></li>
-                        <li class="time__item"><button class="time__btn">10:00</button></li>
-                        <li class="time__item"><button class="time__btn">10:00</button></li>
-                        <li class="time__item"><button class="time__btn">10:00</button></li>
-                        <li class="time__item"><button class="time__btn">10:00</button></li>
-                        <li class="time__item"><button class="time__btn">10:00</button></li>
-                        <li class="time__item"><button class="time__btn">10:00</button></li>
-                        <li class="time__item"><button class="time__btn">10:00</button></li>
-                        <li class="time__item"><button class="time__btn">10:00</button></li>
-                        <li class="time__item"><button class="time__btn">10:00</button></li>
-                        <li class="time__item"><button class="time__btn">10:00</button></li>
-                        <li class="time__item"><button class="time__btn">10:00</button></li>
-                        <li class="time__item"><button class="time__btn">10:00</button></li>
-                    </ul>
+                    <ul class="time__list"></ul>
                     <div class="modal__btn-wrap">
                         <button class="modal__btn prev-content" type="button">Повернутися</button>
-                        <button class="modal__btn modal-finish" type="button">Обрати</button>
+                        <button class="modal__btn modal-finish" disabled type="button">Обрати</button>
                     </div>
                 </div>
             </div>

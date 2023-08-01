@@ -171,7 +171,12 @@
 
         &.disabled {
             color: var(--grey);
+            cursor: auto;
             border-color: var(--grey);
+        }
+
+        & button:disabled {
+            pointer-events: none;
         }
 
         &.error {

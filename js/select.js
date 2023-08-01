@@ -1,6 +1,7 @@
 const inputs = document.querySelectorAll("input");
 const selectBtns = document.querySelectorAll(".select__btn");
-const dateBtnWrap = document.querySelector(".booking__date");
+const dateInputBtn = document.querySelector(".booking__date");
+const dateBtnWrap = document.querySelector(".time-input");
 
 const onInputChange = (input) => {
   input.closest(".booking__input-wrap").classList.add("changed");
@@ -12,16 +13,19 @@ inputs.forEach((input) =>
 );
 
 checkIfDateBtnDisabled = () => {
-  const isEmpty = [...inputs].some((input) => input.value == "");
+  const inputsAreEmpty = [...inputs].some((input) => input.value == "");
+  const inputsBtnsAreEmpty = [...selectBtns].some(
+    (selectBtn) => selectBtn.value == ""
+  );
 
-  if (isEmpty || selectBtns[0].value === "") {
+  if (inputsAreEmpty || inputsBtnsAreEmpty) {
     dateBtnWrap.classList.add("disabled");
-    dateBtnWrap.setAttribute("disabled", true);
+    dateInputBtn.setAttribute("disabled", true);
     return;
   }
 
   dateBtnWrap.classList.remove("disabled");
-  dateBtnWrap.removeAttribute("disabled");
+  dateInputBtn.removeAttribute("disabled");
 };
 
 selectBtns.forEach((selectBtn) => {

@@ -1,16 +1,30 @@
 .calendar {
     margin-bottom: 60px;
+
+    @include tablet {
+        display: flex;
+        margin-bottom: 56px;
+    }
     
     &__header {
         color: var(--text-secondary);
         font-size: 14px;
         padding: 8px 16px;
         background-color: var(--accent);
+
+        @include tablet {
+            padding: 24px;
+        }
     }
 
     &__body {
         padding: 40px 28px 12px;
         background-color: var(--text-secondary);
+
+        @include tablet {
+            flex-basis: 352px;
+            padding: 24px 40px;
+        }
         
         &-title {
             font-family: Impact;

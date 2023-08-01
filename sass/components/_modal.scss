@@ -10,12 +10,16 @@
 }
 
 .modal {
-    width: 375px; 
+    // min-width: 375px; 
     background-color: var(--bg-secondary);
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+
+    // @include tablet {
+    //     max-width: 704px;
+    // }
 
     & .close-btn {
         top: 14px;
@@ -26,6 +30,12 @@
         width: 375px;
         padding-top: 40px;
         padding-bottom: 40px;
+
+        @include tablet {
+            width: 704px;
+            padding: 60px 112px;
+        }
+
     }
 }
 
@@ -78,6 +88,12 @@
 
     &:hover, &:focus {
         background-color: var(--accent-hover);
+    }
+
+    &[disabled] {
+        color: var(--text-secondary);
+        pointer-events: none;
+        background-color: var(--grey);
     }
 }
 

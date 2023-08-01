@@ -333,7 +333,6 @@ br {
 }
 
 .modal {
-  width: 375px;
   background-color: var(--bg-secondary);
   position: absolute;
   top: 50%;
@@ -348,6 +347,12 @@ br {
   width: 375px;
   padding-top: 40px;
   padding-bottom: 40px;
+}
+@media screen and (min-width: 768px) {
+  .modal .container {
+    width: 704px;
+    padding: 60px 112px;
+  }
 }
 
 .modal__head {
@@ -400,6 +405,11 @@ br {
 .modal__btn:hover, .modal__btn:focus {
   background-color: var(--accent-hover);
 }
+.modal__btn[disabled] {
+  color: var(--text-secondary);
+  pointer-events: none;
+  background-color: var(--grey);
+}
 
 .time__list {
   display: flex;
@@ -444,15 +454,32 @@ br {
 .calendar {
   margin-bottom: 60px;
 }
+@media screen and (min-width: 768px) {
+  .calendar {
+    display: flex;
+    margin-bottom: 56px;
+  }
+}
 .calendar__header {
   color: var(--text-secondary);
   font-size: 14px;
   padding: 8px 16px;
   background-color: var(--accent);
 }
+@media screen and (min-width: 768px) {
+  .calendar__header {
+    padding: 24px;
+  }
+}
 .calendar__body {
   padding: 40px 28px 12px;
   background-color: var(--text-secondary);
+}
+@media screen and (min-width: 768px) {
+  .calendar__body {
+    flex-basis: 352px;
+    padding: 24px 40px;
+  }
 }
 .calendar__body-title {
   font-family: Impact;
@@ -1459,7 +1486,11 @@ video {
 }
 .booking__input-wrap.disabled {
   color: var(--grey);
+  cursor: auto;
   border-color: var(--grey);
+}
+.booking__input-wrap button:disabled {
+  pointer-events: none;
 }
 .booking__input-wrap.error {
   color: var(--accent);
