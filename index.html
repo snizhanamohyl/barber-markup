@@ -1038,7 +1038,21 @@
                     <button class="modal__btn choose-time" type="button">Обрати час</button>
                 </div>
                 <div class="modal__time-content visually-hidden">
-                    <h3 class="modal__title">Час</h3>
+                    <div class="time__top">
+                        <h3 class="modal__title">Час</h3>
+                        <div class="time__nav">
+                            <button class="time__nav-btn prev" disabled type="button">
+                                <svg width="20" height="28">
+                                    <use href="./images/sprite.svg#icon-arrow-left"></use>
+                                </svg>
+                            </button>
+                            <button class="time__nav-btn next" type="button">
+                                <svg width="20" height="28">
+                                    <use href="./images/sprite.svg#icon-arrow-right"></use>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
                     <ul class="time__list"></ul>
                     <div class="modal__btn-wrap">
                         <button class="modal__btn prev-content" type="button">Повернутися</button>

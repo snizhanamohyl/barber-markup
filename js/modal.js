@@ -6,14 +6,21 @@ const timeModalContent = document.querySelector(".modal__time-content");
 const chooseTimeBtn = backdrop.querySelector(".choose-time");
 const prevModalBtn = backdrop.querySelector(".prev-content");
 const finishModalBtn = backdrop.querySelector(".modal-finish");
+const timeNavElems = document.querySelectorAll(".time__nav-btn");
+
+const resetNavStyles = () => {
+  timeNavElems[0].setAttribute("disabled", true);
+  timeNavElems[1].removeAttribute("disabled");
+};
 
 const toggleModal = () => {
-  console.log("vew");
   if (backdrop.classList.contains("visually-hidden")) {
     backdrop.classList.remove("visually-hidden");
   } else {
     backdrop.classList.add("visually-hidden");
   }
+
+  resetNavStyles();
 };
 
 const showTimeModalContent = () => {
@@ -24,6 +31,8 @@ const showTimeModalContent = () => {
 const showPrevModalContent = () => {
   dateModalContent.classList.remove("visually-hidden");
   timeModalContent.classList.add("visually-hidden");
+
+  resetNavStyles();
 };
 
 chooseTimeBtn.addEventListener("click", showTimeModalContent);

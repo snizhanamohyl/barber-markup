@@ -452,6 +452,35 @@ br {
   pointer-events: none;
   background-color: var(--grey);
 }
+.time__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0;
+  margin-bottom: 16px;
+}
+.time__top .modal__title {
+  margin-bottom: 0;
+}
+.time__nav {
+  display: flex;
+  gap: 24px;
+}
+.time__nav-btn {
+  color: var(--accent);
+  transition: color var(--transition-time) var(--transition-function);
+  padding: 4px 8px;
+}
+.time__nav-btn:hover {
+  color: var(--text-primary);
+}
+.time__nav-btn:disabled {
+  color: var(--grey);
+  pointer-events: none;
+}
+.time__nav-btn svg {
+  fill: currentColor;
+}
 
 .modal__btn-wrap {
   display: flex;

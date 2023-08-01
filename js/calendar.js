@@ -247,12 +247,11 @@ generateAvailableTimeData();
 // ----------------------------------------------
 
 const timeListEl = document.querySelector(".time__list");
+const timeNavBtnsEl = document.querySelectorAll(".time__nav-btn");
 
-const isSmallHeight = window.innerHeight < 900;
+const isSmallScreen = window.innerWidth < 1280;
 
-const renderTimeList = () => {
-  let timeListMarkup = "";
-
+const renderTimeList = (data = basicPossibleTimeList) => {
   const availableWindows = availableTimeData[date.toLocaleDateString("en-US")];
 
   const isToday =
@@ -260,25 +259,90 @@ const renderTimeList = () => {
     curMonth === todayDate.getMonth() &&
     curYear === todayDate.getFullYear();
 
-  for (i = 10; i <= 21; i += 0.5) {
-    const timeText = Number.isInteger(i) ? `${i}:00` : `${Math.floor(i)}:30`;
-    const isNotAvailable = availableWindows.find((time) => time === timeText);
+  const dataToRender = isSmallScreen ? [...data].splice(0, 12) : data;
+
+  const timeListMarkup = dataToRender.reduce((acc, time) => {
+    const isNotAvailable = availableWindows.find(
+      (availableTime) => time === availableTime
+    );
 
     if (isToday) {
       const nowTime = todayHour + todayMinute / 60;
 
-      timeListMarkup += `<li class="time__item"><button class="time__btn" data-time="${timeText}" ${
-        i < nowTime || isNotAvailable ? "disabled" : ""
-      }>${timeText}</button></li>`;
+      const [hours, minutes] = time
+        .split(":")
+        .map((timeText) => Number(timeText));
+      const possibleTime = hours + minutes / 60;
+
+      return (acc += `<li class="time__item"><button class="time__btn" data-time="${time}" ${
+        possibleTime < nowTime || isNotAvailable ? "disabled" : ""
+      }>${time}</button></li>`);
     } else {
-      timeListMarkup += `<li class="time__item"><button class="time__btn" data-time="${timeText}" ${
+      console.log("not today");
+      return (acc += `<li class="time__item"><button class="time__btn" data-time="${time}" ${
         isNotAvailable ? "disabled" : ""
-      }>${timeText}</button></li>`;
+      }>${time}</button></li>`);
     }
-  }
-  // isSmallHeight ;
+  }, "");
+
   timeListEl.innerHTML = timeListMarkup;
 };
+
+const onTimeNavClick = (e) => {
+  e.currentTarget.setAttribute("disabled", true);
+  let timeToRender;
+
+  if (e.currentTarget.classList.contains("next")) {
+    timeToRender = [...basicPossibleTimeList].splice(12);
+    timeNavBtnsEl[0].removeAttribute("disabled");
+  } else {
+    timeToRender = [...basicPossibleTimeList].splice(0, 12);
+    timeNavBtnsEl[1].removeAttribute("disabled");
+  }
+
+  renderTimeList(timeToRender);
+};
+
+const showHideTimeNav = () => {
+  timeNavBtnsEl[0].closest(".time__nav").style.display = isSmallScreen
+    ? "flex"
+    : "none";
+};
+
+timeNavBtnsEl.forEach((btn) => btn.addEventListener("click", onTimeNavClick));
+
+// const renderTimeList = () => {
+//   let timeListMarkup = "";
+
+//   const availableWindows = availableTimeData[date.toLocaleDateString("en-US")];
+
+//   const isToday =
+//     curDay === todayDate.getDate() &&
+//     curMonth === todayDate.getMonth() &&
+//     curYear === todayDate.getFullYear();
+
+//   const startTime = isSmallScreen ? 10 : 10;
+//   const endTime = isSmallScreen ? 10 + (21 - 10) / 2 : 21;
+
+//   for (i = startTime; i <= endTime; i += 0.5) {
+//     const timeText = Number.isInteger(i) ? `${i}:00` : `${Math.floor(i)}:30`;
+//     const isNotAvailable = availableWindows.find((time) => time === timeText);
+
+//     if (isToday) {
+//       const nowTime = todayHour + todayMinute / 60;
+
+//       timeListMarkup += `<li class="time__item"><button class="time__btn" data-time="${timeText}" ${
+//         i < nowTime || isNotAvailable ? "disabled" : ""
+//       }>${timeText}</button></li>`;
+//     } else {
+//       timeListMarkup += `<li class="time__item"><button class="time__btn" data-time="${timeText}" ${
+//         isNotAvailable ? "disabled" : ""
+//       }>${timeText}</button></li>`;
+//     }
+//   }
+
+//   timeListEl.innerHTML = timeListMarkup;
+// };
 
 const finishBtn = backdrop.querySelector(".modal-finish");
 
@@ -313,4 +377,6 @@ const onFinish = () => {
 
 timeListEl.addEventListener("click", onTimePick);
 finishBtn.addEventListener("click", onFinish);
+
+showHideTimeNav();
 renderTimeList();
