@@ -278,7 +278,6 @@ const renderTimeList = (data = basicPossibleTimeList) => {
         possibleTime < nowTime || isNotAvailable ? "disabled" : ""
       }>${time}</button></li>`);
     } else {
-      console.log("not today");
       return (acc += `<li class="time__item"><button class="time__btn" data-time="${time}" ${
         isNotAvailable ? "disabled" : ""
       }>${time}</button></li>`);
@@ -311,39 +310,6 @@ const showHideTimeNav = () => {
 
 timeNavBtnsEl.forEach((btn) => btn.addEventListener("click", onTimeNavClick));
 
-// const renderTimeList = () => {
-//   let timeListMarkup = "";
-
-//   const availableWindows = availableTimeData[date.toLocaleDateString("en-US")];
-
-//   const isToday =
-//     curDay === todayDate.getDate() &&
-//     curMonth === todayDate.getMonth() &&
-//     curYear === todayDate.getFullYear();
-
-//   const startTime = isSmallScreen ? 10 : 10;
-//   const endTime = isSmallScreen ? 10 + (21 - 10) / 2 : 21;
-
-//   for (i = startTime; i <= endTime; i += 0.5) {
-//     const timeText = Number.isInteger(i) ? `${i}:00` : `${Math.floor(i)}:30`;
-//     const isNotAvailable = availableWindows.find((time) => time === timeText);
-
-//     if (isToday) {
-//       const nowTime = todayHour + todayMinute / 60;
-
-//       timeListMarkup += `<li class="time__item"><button class="time__btn" data-time="${timeText}" ${
-//         i < nowTime || isNotAvailable ? "disabled" : ""
-//       }>${timeText}</button></li>`;
-//     } else {
-//       timeListMarkup += `<li class="time__item"><button class="time__btn" data-time="${timeText}" ${
-//         isNotAvailable ? "disabled" : ""
-//       }>${timeText}</button></li>`;
-//     }
-//   }
-
-//   timeListEl.innerHTML = timeListMarkup;
-// };
-
 const finishBtn = backdrop.querySelector(".modal-finish");
 
 const updateDateWithTime = () => {
@@ -371,8 +337,10 @@ const onFinish = () => {
   const chosenDate = `${date.toLocaleDateString("en-US")}, ${curTime}`;
 
   dateInput.value = chosenDate;
-  dateInput.innerText = chosenDate;
+  dateInput.querySelector(".select__btn-text").innerText = chosenDate;
+  dateInput.closest(".booking__input-wrap").classList.remove("error");
   dateInput.closest(".booking__input-wrap").classList.add("changed");
+  dateInput.querySelector(".default-value").style.display = "none";
 };
 
 timeListEl.addEventListener("click", onTimePick);

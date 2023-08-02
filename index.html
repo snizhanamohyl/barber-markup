@@ -588,20 +588,20 @@
                     <h2 class="booking__title">Забронювати місце</h2>
                     <p class="booking__descr">Чекаємо на тебе!</p>
                 </div>
-                <form class="booking__form">
+                <form class="booking__form" autocomplete="off">
                     <label class="booking__input-wrap">
                         <svg class="booking__icon" width="20" height="20">
                             <use href="./images/sprite.svg#icon-people"></use>
                         </svg>
                         <input class="booking__input" placeholder="Введіть ім’я" name="name" type="text">
-                        <span class="error-msg">incorrect name</span>
+                        <span class="error-msg"></span>
                     </label>
                     <label class="booking__input-wrap">
                         <svg class="booking__icon" width="20" height="20">
                             <use href="./images/sprite.svg#icon-phone"></use>
                         </svg>
                         <input class="booking__input" placeholder="Введіть номер телефону" name="phone" type="text">
-                        <span class="error-msg">incorrect name</span>
+                        <span class="error-msg"></span>
                     </label>
                     <div class="select">
                         <div class="booking__input-wrap">
@@ -611,16 +611,18 @@
                             <svg class="select__icon" width="20" height="20">
                                 <use href="./images/sprite.svg#icon-arrow-bottom"></use>
                             </svg>
-                            <button class="select__btn booking__input" type="button" value="">
-                                <p class="select__btn-text">Оберіть барбершоп</p>
+                            <button class="select__btn booking__input" name="barbershop" type="button" value="">
+                                <p class="select__btn-text"></p>
+                                <p class="default-value">Оберіть барбершоп</p>
                             </button>
+                            <span class="error-msg"></span>
                         </div>
                         <ul class="options">
-                            <li class="options__item"><button type="button" class="options__btn" value="derevianenko">Барбер I -
+                            <li class="options__item"><button type="button" class="options__btn" value="barber-1">Барбер I -
                                     вул. Олександра Архипенка, 4</button></li>
-                            <li class="options__item"><button type="button" class="options__btn" value="popko">Барбер II -
+                            <li class="options__item"><button type="button" class="options__btn" value="barber-2">Барбер II -
                                     Оболонский проспект, 36Д</button></li>
-                            <li class="options__item"><button type="button" class="options__btn" value="iesaian">Барбер III -
+                            <li class="options__item"><button type="button" class="options__btn" value="barber-3">Барбер III -
                                     Харківське шосе, 56</button></li>
                         </ul>
                     </div>
@@ -632,9 +634,11 @@
                             <svg class="select__icon" width="20" height="20">
                                 <use href="./images/sprite.svg#icon-arrow-bottom"></use>
                             </svg>
-                            <button class="select__btn booking__input" type="button" value="">
-                                <p class="select__btn-text">Оберіть барбера</p>
+                            <button class="select__btn booking__input" name="barber" type="button" value="">
+                                <p class="select__btn-text"></p>
+                                <p class="default-value">Оберіть барбера</p>
                             </button>
+                            <span class="error-msg"></span>
                         </div>
                         <ul class="options">
                             <li class="options__item"><button type="button" class="options__btn" value="derevianenko">Станіслав
@@ -653,7 +657,11 @@
                         <svg class="booking__icon" width="20" height="20">
                             <use href="./images/sprite.svg#icon-calendar"></use>
                         </svg>
-                        <button class="booking__input booking__date" type="button" disabled>Оберіть дату та час</button>
+                        <button class="booking__input booking__date"  name="date" type="button" disabled>
+                            <p class="select__btn-text"></p>
+                            <p class="default-value">Оберіть дату та час</p>
+                        </button>
+                        <span class="error-msg"></span>
                     </div>
                     <button class="hero__btn" type="submit">Записатися</button>
                 </form>
@@ -1070,5 +1078,6 @@
     <script src="./js/map.js"></script>
     <script src="./js/modal.js" ></script>
     <script src="./js/calendar.js" defer></script>
+    <script src="./js/form.js"></script>
 </body>
 </html> 

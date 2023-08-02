@@ -15,7 +15,7 @@ inputs.forEach((input) =>
 checkIfDateBtnDisabled = () => {
   const inputsAreEmpty = [...inputs].some((input) => input.value == "");
   const inputsBtnsAreEmpty = [...selectBtns].some(
-    (selectBtn) => selectBtn.value == ""
+    (selectBtn) => selectBtn.value === ""
   );
 
   if (inputsAreEmpty || inputsBtnsAreEmpty) {
@@ -52,7 +52,12 @@ selectBtns.forEach((selectBtn) => {
     if (e.target.nodeName !== "BUTTON") return;
 
     selectBtn.value = e.target.value;
+    e.target
+      .closest(".select")
+      .querySelector(".booking__input-wrap")
+      .classList.remove("error");
     selectBtn.querySelector("p").innerText = e.target.innerText;
+    selectBtn.querySelector(".default-value").style.display = "none";
     onInputChange(selectBtn);
     checkIfDateBtnDisabled();
 

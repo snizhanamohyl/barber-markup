@@ -1549,7 +1549,6 @@ video {
   caret-color: var(--accent);
 }
 .booking__input-wrap.changed {
-  color: var(--accent);
   border-color: var(--accent);
 }
 .booking__input-wrap.disabled {
@@ -1568,7 +1567,8 @@ video {
 .booking__input-wrap.error .error-msg {
   display: block;
   position: absolute;
-  top: 37px;
+  font-size: 12px;
+  top: 100%;
   left: 0;
 }
 .booking__input::-moz-placeholder {

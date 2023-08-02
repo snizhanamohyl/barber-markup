@@ -165,7 +165,6 @@
         }
 
         &.changed {
-            color: var(--accent);
             border-color: var(--accent);
         }
 
@@ -187,7 +186,8 @@
             & .error-msg {
                 display: block;
                 position: absolute;
-                top: 37px;;
+                font-size: 12px;
+                top: 100%;
                 left: 0;
             }
         }
