@@ -950,123 +950,75 @@
                     <use href="./images/sprite.svg#icon-close"></use>
                 </svg>
             </button>
-            <div class="modal__head">
-                <h2 class="modal__main-title">Запис у <span class="accent">Barber</span></h2>
-                <p class="modal__chosen-date"></p>
-            </div>
-            <div class="container">
-                <!-- <div class="modal__inputs">
-                    <div class="modal__input-wrap">
-                        <h3 class="modal__title">Барбер</h3>
-                        <div class="select">
-                            <div class="booking__input-wrap">
-                                <svg class="booking__icon" width="20" height="20">
-                                    <use href="./images/sprite.svg#icon-people-search"></use>
-                                </svg>
-                                <svg class="select__icon" width="20" height="20">
-                                    <use href="./images/sprite.svg#icon-arrow-bottom"></use>
-                                </svg>
-                                <button class="select__btn booking__input" type="button" value="">
-                                    <p class="select__btn-text">Оберіть барбера</p>
-                                </button>
+            <div class="modal__form">
+                <div class="modal__head">
+                    <h2 class="modal__main-title">Запис у <span class="accent">Barber</span></h2>
+                    <p class="modal__chosen-date"></p>
+                </div>
+                <div class="container">
+                    <div class="modal__date-content">
+                        <h3 class="modal__title">Дата</h3>
+                        <div class="calendar">
+                            <div class="calendar__header">
+                                <p class="calendar__header-year"></p>
+                                <p class="calendar__header-day"></p>
                             </div>
-                            <ul class="options">
-                                <li class="options__item"><button type="button" class="options__btn" value="derevianenko">Станіслав
-                                        Дерев’янко - Старший барбер</button></li>
-                                <li class="options__item"><button type="button" class="options__btn" value="popko">Іван Попко -
-                                        Барбер</button></li>
-                                <li class="options__item"><button type="button" class="options__btn" value="iesaian">Арсен Єсаян - Арт
-                                        Барбер</button></li>
-                                <li class="options__item"><button type="button" class="options__btn" value="koshlia">Сергій Кошля -
-                                        Барбер</button></li>
-                                <li class="options__item"><button type="button" class="options__btn" value="tushniuk">Віталій Тушнюк -
-                                        Старший барбер</button></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="modal__input-wrap">
-                        <h3 class="modal__title">Барбершоп</h3>
-                        <div class="select">
-                            <div class="booking__input-wrap">
-                                <svg class="booking__icon" width="20" height="20">
-                                    <use href="./images/sprite.svg#icon-location"></use>
-                                </svg>
-                                <svg class="select__icon" width="20" height="20">
-                                    <use href="./images/sprite.svg#icon-arrow-bottom"></use>
-                                </svg>
-                                <button class="select__btn booking__input" type="button" value="">
-                                    <p class="select__btn-text">Оберіть барбершоп</p>
-                                </button>
+                            <div class="calendar__body">
+                                <div class="calendar__top">
+                                    <button class="calendar__nav prev" type="button">
+                                        <svg width="20" height="32">
+                                            <use href="./images/sprite.svg#icon-arrow-left"></use>
+                                        </svg>
+                                    </button>
+                                    <p class="calendar__body-title current-date"></p>
+                                    <button class="calendar__nav next" type="button">
+                                        <svg width="20" height="32">
+                                            <use href="./images/sprite.svg#icon-arrow-right"></use>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <ul class="calendar__week">
+                                    <li class="calendar__body-title">Пн</li>
+                                    <li class="calendar__body-title">Вт</li>
+                                    <li class="calendar__body-title">Ср</li>
+                                    <li class="calendar__body-title">Чт</li>
+                                    <li class="calendar__body-title">Пт</li>
+                                    <li class="calendar__body-title">Сб</li>
+                                    <li class="calendar__body-title">Нд</li>
+                                </ul>
+                                <ul class="calendar__month">
+                                </ul>
                             </div>
-                            <ul class="options">
-                                <li class="options__item"><button type="button" class="options__btn" value="derevianenko">Барбер I -
-                                        вул. Олександра Архипенка, 4</button></li>
-                                <li class="options__item"><button type="button" class="options__btn" value="popko">Барбер II -
-                                        Оболонский проспект, 36Д</button></li>
-                                <li class="options__item"><button type="button" class="options__btn" value="iesaian">Барбер III -
-                                        Харківське шосе, 56</button></li>
-                            </ul>
                         </div>
+                        <button class="modal__btn choose-time" type="button">Обрати час</button>
                     </div>
-                </div> -->
-                <div class="modal__date-content">
-                    <h3 class="modal__title">Дата</h3>
-                    <div class="calendar">
-                        <div class="calendar__header">
-                            <p class="calendar__header-year"></p>
-                            <p class="calendar__header-day"></p>
-                        </div>
-                        <div class="calendar__body">
-                            <div class="calendar__top">
-                                <button class="calendar__nav prev" type="button">
-                                    <svg width="20" height="32">
+                    <div class="modal__time-content visually-hidden">
+                        <div class="time__top">
+                            <h3 class="modal__title">Час</h3>
+                            <div class="time__nav">
+                                <button class="time__nav-btn prev" disabled type="button">
+                                    <svg width="20" height="28">
                                         <use href="./images/sprite.svg#icon-arrow-left"></use>
                                     </svg>
                                 </button>
-                                <p class="calendar__body-title current-date"></p>
-                                <button class="calendar__nav next" type="button">
-                                    <svg width="20" height="32">
+                                <button class="time__nav-btn next" type="button">
+                                    <svg width="20" height="28">
                                         <use href="./images/sprite.svg#icon-arrow-right"></use>
                                     </svg>
                                 </button>
                             </div>
-                            <ul class="calendar__week">
-                                <li class="calendar__body-title">Пн</li>
-                                <li class="calendar__body-title">Вт</li>
-                                <li class="calendar__body-title">Ср</li>
-                                <li class="calendar__body-title">Чт</li>
-                                <li class="calendar__body-title">Пт</li>
-                                <li class="calendar__body-title">Сб</li>
-                                <li class="calendar__body-title">Нд</li>
-                            </ul>
-                            <ul class="calendar__month">
-                            </ul>
+                        </div>
+                        <ul class="time__list"></ul>
+                        <div class="modal__btn-wrap">
+                            <button class="modal__btn prev-content" type="button">Повернутися</button>
+                            <button class="modal__btn modal-finish" disabled type="button">Обрати</button>
                         </div>
                     </div>
-                    <button class="modal__btn choose-time" type="button">Обрати час</button>
                 </div>
-                <div class="modal__time-content visually-hidden">
-                    <div class="time__top">
-                        <h3 class="modal__title">Час</h3>
-                        <div class="time__nav">
-                            <button class="time__nav-btn prev" disabled type="button">
-                                <svg width="20" height="28">
-                                    <use href="./images/sprite.svg#icon-arrow-left"></use>
-                                </svg>
-                            </button>
-                            <button class="time__nav-btn next" type="button">
-                                <svg width="20" height="28">
-                                    <use href="./images/sprite.svg#icon-arrow-right"></use>
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                    <ul class="time__list"></ul>
-                    <div class="modal__btn-wrap">
-                        <button class="modal__btn prev-content" type="button">Повернутися</button>
-                        <button class="modal__btn modal-finish" disabled type="button">Обрати</button>
-                    </div>
-                </div>
+            </div>
+            <div class="modal__success">
+                <p class="modal__title">Брутально, друже!</p>
+                <p class="modal__success-msg">Найближчим часом ми зв’яжемося з тобою для підтвердження запису. Але будь певний, твій барбер вже чекає на тебе!</p>
             </div>
         </div>
     </div>

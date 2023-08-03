@@ -7,6 +7,7 @@ const chooseTimeBtn = backdrop.querySelector(".choose-time");
 const prevModalBtn = backdrop.querySelector(".prev-content");
 const finishModalBtn = backdrop.querySelector(".modal-finish");
 const timeNavElems = document.querySelectorAll(".time__nav-btn");
+const successModalEl = document.querySelector(".modal__success");
 
 const resetNavStyles = () => {
   timeNavElems[0].setAttribute("disabled", true);
@@ -16,6 +17,9 @@ const resetNavStyles = () => {
 const toggleModal = () => {
   if (backdrop.classList.contains("visually-hidden")) {
     backdrop.classList.remove("visually-hidden");
+
+    successModalEl.style.display = "none";
+    document.querySelector(".modal__form").classList.remove("visually-hidden");
   } else {
     backdrop.classList.add("visually-hidden");
   }

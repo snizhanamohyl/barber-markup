@@ -513,6 +513,28 @@ br {
   }
 }
 
+.modal__success {
+  display: none;
+  padding: 232px 24px 40px;
+  width: 277px;
+  background-color: var(--text-secondary);
+  background-image: url(../images/svg/success-bg.svg);
+  background-position: top 0 left 0;
+  background-repeat: no-repeat;
+}
+@media screen and (min-width: 768px) {
+  .modal__success {
+    width: 448px;
+    padding: 64px 32px 56px 184px;
+  }
+}
+.modal__success .modal__title {
+  margin-bottom: 16px;
+}
+.modal__success-msg {
+  font-size: 14px;
+}
+
 .calendar {
   margin-bottom: 60px;
 }

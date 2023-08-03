@@ -202,3 +202,26 @@
         width: 480px;
     }
 }
+
+.modal__success {
+    display: none;
+    padding: 232px 24px 40px;
+    width: 277px;
+    background-color: var(--text-secondary);
+    background-image: url(../images/svg/success-bg.svg);
+    background-position: top 0 left 0;
+    background-repeat: no-repeat;
+
+    @include tablet {
+        width: 448px;
+        padding: 64px 32px 56px 184px;
+    }
+
+    & .modal__title {
+        margin-bottom: 16px;
+    }
+
+    &-msg {
+        font-size: 14px;
+    }
+}

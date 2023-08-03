@@ -48,6 +48,8 @@ const onPhoneInputFocus = (e) => {
   e.target.value = "+38(0";
 };
 
+const successModal = document.querySelector(".modal__success");
+
 const onSubmit = (e) => {
   e.preventDefault();
 
@@ -72,9 +74,10 @@ const onSubmit = (e) => {
 
   inputElems.forEach((input) => {
     submitData[input.name] = input.value;
+    input.closest(".booking__input-wrap").classList.remove("changed");
   });
 
-  console.log(submitData);
+  console.log("submitData", submitData);
 
   bookingForm.reset();
 
@@ -92,14 +95,11 @@ const onSubmit = (e) => {
     if (defaultValueWrap) defaultValueWrap.style.display = "block";
   });
 
+  toggleModal();
+  successModal.style.display = "block";
+  document.querySelector(".modal__form").classList.add("visually-hidden");
   return submitData;
 };
-
-// const onChange = (e) => {
-//   if (e.target.closest(".booking__input-wrap").classList.contains("error")) {
-
-//   }
-// };
 
 inputElems[0].addEventListener("change", onNameChange);
 
