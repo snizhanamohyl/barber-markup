@@ -154,8 +154,7 @@
         }
 
         
-        &:hover, &:focus, &:focus-within {
-            color: var(--accent);  
+        &:hover, &:focus, &:focus-within { 
             border-color: var(--accent);
             
             & input {

@@ -17,11 +17,13 @@ const resetNavStyles = () => {
 const toggleModal = () => {
   if (backdrop.classList.contains("visually-hidden")) {
     backdrop.classList.remove("visually-hidden");
+    document.body.style.overflowY = "hidden";
 
     successModalEl.style.display = "none";
     document.querySelector(".modal__form").classList.remove("visually-hidden");
   } else {
     backdrop.classList.add("visually-hidden");
+    document.body.style.overflowY = "auto";
   }
 
   resetNavStyles();

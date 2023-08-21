@@ -1567,7 +1567,6 @@ video {
   margin-bottom: 24px;
 }
 .booking__input-wrap:hover, .booking__input-wrap:focus, .booking__input-wrap:focus-within {
-  color: var(--accent);
   border-color: var(--accent);
 }
 .booking__input-wrap:hover input, .booking__input-wrap:focus input, .booking__input-wrap:focus-within input {
