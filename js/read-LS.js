@@ -10,7 +10,10 @@ const checkIfDatePickerDisabled = () => {
     (name) => name !== "date"
   );
 
-  const isDisabled = inputNamesExceptDate.some((name) => !storedValues[name]);
+  const isDisabled =
+    inputNamesExceptDate.length === 0
+      ? true
+      : inputNamesExceptDate.some((name) => !storedValues[name]);
 
   if (isDisabled) return;
 
@@ -19,7 +22,7 @@ const checkIfDatePickerDisabled = () => {
   dateInput.closest(".booking__input-wrap").classList.remove("disabled");
   dateInput.removeAttribute("disabled");
 
-  dateInput.innerText = storedValues.date;
+  if (storedValues.date) dateInput.innerText = storedValues.date;
 };
 
 checkIfDatePickerDisabled();

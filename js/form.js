@@ -116,11 +116,6 @@ const onSubmit = (e) => {
   return submitData;
 };
 
-// const getLS = () => {
-//   const storedValue = JSON.parse(localStorage.getItem("form-values"));
-//   return storedValue ? storedValue : {};
-// };
-
 const saveNameToLS = ({ target }) => {
   const newStoredValues = {
     ...storedFormValues,
