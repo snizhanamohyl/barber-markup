@@ -23,7 +23,7 @@ html {
 
 @font-face {
   font-family: "Impact";
-  src: url("../../fonts/Impact.ttf");
+  src: url("../fonts/Impact.ttf");
 }
 body {
   margin: 0;
