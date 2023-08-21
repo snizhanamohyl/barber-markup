@@ -42,13 +42,21 @@
         min-width: 327px;
         width: 100%;
         padding-left: 24px;
+        padding-right: 24px;
+        overflow-x: scroll;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
 
         @include tablet {
             padding-left: 32px;
+            padding-right: 32px;
         }
 
         @include desktop {
             padding-left: 80px;
+            padding-right: 80px;
         }
     }
 }
@@ -67,8 +75,8 @@
 
 .customers__list {
     display: flex;
-    gap: 24px;
-    width: calc(327px * 4 + 3 * 24px);
+    gap: 32px;
+    width: calc(327px * 4 + 3 * 32px);
 
     @include tablet {
         gap: 32px;

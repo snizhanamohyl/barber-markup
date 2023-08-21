@@ -24,16 +24,16 @@ sliders.forEach((slider) => {
   const onNavBtnClick = (e) => {
     const isScrollToLeft = e.currentTarget.classList.contains("left");
     slider.scrollLeft += isScrollToLeft ? -cardWidth : cardWidth;
-    // setTimeout(() => disableBtns(), 200);
   };
 
   const disableBtns = () => {
-    navBtns[0].disabled = slider.scrollLeft === 0;
+    const leftBtnDisabled = Math.floor(slider.scrollLeft) === 0;
 
     const rightIsDisabled = isCustomersSlider
-      ? slider.scrollLeft === sliderScrollWidth
+      ? Math.ceil(slider.scrollLeft) === sliderScrollWidth
       : slider.scrollLeft > sliderScrollWidth - cardWidth;
 
+    navBtns[0].disabled = leftBtnDisabled;
     navBtns[1].disabled = rightIsDisabled;
   };
 

@@ -1395,6 +1395,7 @@ video {
 @media screen and (min-width: 1280px) {
   .barbers__item img {
     width: 352px;
+    height: 326px;
   }
 }
 .barbers__item-info {
@@ -1787,15 +1788,22 @@ video {
   min-width: 327px;
   width: 100%;
   padding-left: 24px;
+  padding-right: 24px;
+  overflow-x: scroll;
+}
+.customers .slider__wrap::-webkit-scrollbar {
+  display: none;
 }
 @media screen and (min-width: 768px) {
   .customers .slider__wrap {
     padding-left: 32px;
+    padding-right: 32px;
   }
 }
 @media screen and (min-width: 1280px) {
   .customers .slider__wrap {
     padding-left: 80px;
+    padding-right: 80px;
   }
 }
 
@@ -1815,8 +1823,8 @@ video {
 
 .customers__list {
   display: flex;
-  gap: 24px;
-  width: 1380px;
+  gap: 32px;
+  width: 1404px;
 }
 @media screen and (min-width: 768px) {
   .customers__list {

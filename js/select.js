@@ -52,12 +52,28 @@ selectBtns.forEach((selectBtn) => {
     if (e.target.nodeName !== "BUTTON") return;
 
     selectBtn.value = e.target.value;
+
+    const storedValue = JSON.parse(localStorage.getItem("form-values"));
+    const storedValues = storedValue ? storedValue : {};
+
+    const btnName = e.target.closest(".select").querySelector("button").name;
+
+    const newStoredValues = {
+      ...storedValues,
+      [btnName]: e.target.value,
+    };
+
+    localStorage.setItem("form-values", JSON.stringify(newStoredValues));
+
     e.target
       .closest(".select")
       .querySelector(".booking__input-wrap")
       .classList.remove("error");
-    selectBtn.querySelector("p").innerText = e.target.innerText;
+
+    selectBtn.querySelector(".select__btn-text").innerText = e.target.innerText;
+
     selectBtn.querySelector(".default-value").style.display = "none";
+
     onInputChange(selectBtn);
     checkIfDateBtnDisabled();
 

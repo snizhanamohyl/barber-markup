@@ -1,5 +1,3 @@
-// import { availableTimeData } from "./available-time-data";
-
 const currentDate = document.querySelector(".current-date");
 const monthWrap = document.querySelector(".calendar__month");
 const navBtns = document.querySelectorAll(".calendar__nav");
@@ -289,6 +287,7 @@ const renderTimeList = (data = basicPossibleTimeList) => {
 
 const onTimeNavClick = (e) => {
   e.currentTarget.setAttribute("disabled", true);
+
   let timeToRender;
 
   if (e.currentTarget.classList.contains("next")) {
@@ -337,7 +336,18 @@ const onFinish = () => {
   const chosenDate = `${date.toLocaleDateString("en-US")}, ${curTime}`;
 
   dateInput.value = chosenDate;
+
   dateInput.querySelector(".select__btn-text").innerText = chosenDate;
+
+  const storedValue = JSON.parse(localStorage.getItem("form-values"));
+  const storedValues = storedValue ? storedValue : {};
+
+  const newStoredValues = {
+    ...storedValues,
+    [dateInput.name]: dateInput.value,
+  };
+  localStorage.setItem("form-values", JSON.stringify(newStoredValues));
+
   dateInput.closest(".booking__input-wrap").classList.remove("error");
   dateInput.closest(".booking__input-wrap").classList.add("changed");
   dateInput.querySelector(".default-value").style.display = "none";

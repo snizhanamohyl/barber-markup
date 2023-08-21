@@ -1,6 +1,9 @@
 const inputElems = document.querySelectorAll(".booking__input");
 const bookingForm = document.querySelector(".booking__form");
 
+const storedValue = JSON.parse(localStorage.getItem("form-values"));
+const storedFormValues = storedValue ? storedValue : {};
+
 const onNameChange = (e) => {
   const nameValue = e.target.value;
 
@@ -29,6 +32,17 @@ const normalizeNumber = (e) => {
     "+38(0" + x[1] + (x[2] ? ")-" + x[2] : "") + (x[3] ? "-" + x[3] : "");
 
   e.target.value = normalizedNumber;
+  console.log(
+    "🚀 ~ file: form.js:35 ~ normalizeNumber ~ normalizedNumber:",
+    normalizedNumber
+  );
+
+  const newStoredValues = {
+    ...storedFormValues,
+    [e.target.name]: e.target.value,
+  };
+
+  localStorage.setItem("form-values", JSON.stringify(newStoredValues));
 };
 
 const onPhoneChange = (e) => {
@@ -80,6 +94,7 @@ const onSubmit = (e) => {
   console.log("submitData", submitData);
 
   bookingForm.reset();
+  localStorage.setItem("form-values", JSON.stringify({}));
 
   [...inputElems].splice(2).forEach((input) => {
     input.value = "";
@@ -101,7 +116,22 @@ const onSubmit = (e) => {
   return submitData;
 };
 
+// const getLS = () => {
+//   const storedValue = JSON.parse(localStorage.getItem("form-values"));
+//   return storedValue ? storedValue : {};
+// };
+
+const saveNameToLS = ({ target }) => {
+  const newStoredValues = {
+    ...storedFormValues,
+    [target.name]: target.value,
+  };
+
+  localStorage.setItem("form-values", JSON.stringify(newStoredValues));
+};
+
 inputElems[0].addEventListener("change", onNameChange);
+inputElems[0].addEventListener("input", saveNameToLS);
 
 inputElems[1].addEventListener("input", normalizeNumber);
 inputElems[1].addEventListener("change", onPhoneChange);
