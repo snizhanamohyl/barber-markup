@@ -100,7 +100,7 @@
         transition: color var(--transition-time) var(--transition-function);
 
         &:hover,
-        &:focus {
+        &:focus-visible {
             color: var(--accent);
         }
     }

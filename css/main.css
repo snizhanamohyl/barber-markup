@@ -223,7 +223,7 @@ br {
 .socials__link {
   transition: color var(--transition-time) var(--transition-function);
 }
-.socials__link:hover, .socials__link:focus {
+.socials__link:hover, .socials__link:focus-visible {
   color: var(--accent);
 }
 .socials svg {
@@ -2112,7 +2112,7 @@ iframe {
   text-decoration: none;
   transition: color var(--transition-time) var(--transition-function);
 }
-.footer__contacts a:hover, .footer__contacts a:focus {
+.footer__contacts a:hover, .footer__contacts a:focus-visible {
   color: var(--accent);
 }
 
